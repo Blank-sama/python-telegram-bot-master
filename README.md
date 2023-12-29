@@ -28,9 +28,9 @@ Table of contents
 
 - License_
 
-============
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Introduction
-============
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 This library provides a pure Python interface for the
 Telegram Bot API <https://core.telegram.org/bots/api>_.
@@ -42,21 +42,21 @@ make the development of bots easy and straightforward. These classes are contain
 
 A pure API implementation *without* ``telegram.ext`` is available as the standalone package ``python-telegram-bot-raw``.  See here for details. <https://github.com/python-telegram-bot/python-telegram-bot/blob/master/README_RAW.rst>_
 
-----
-Note
-----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+Note:- 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 Installing both ``python-telegram-bot`` and ``python-telegram-bot-raw`` in conjunction will result in undesired side-effects, so only install *one* of both.
 
-====================
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Telegram API support
-====================
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 All types and methods of the Telegram Bot API 5.6 are supported.
 
-==========
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Installing
-==========
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 You can install or upgrade python-telegram-bot with:
 
@@ -78,9 +78,9 @@ In case you have a previously cloned local repository already, you should initia
 
     $ git submodule update --init --recursive
 
----------------------
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Optional Dependencies
----------------------
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 PTB can be installed with optional dependencies:
 
@@ -88,9 +88,9 @@ PTB can be installed with optional dependencies:
 * ``pip install python-telegram-bot[ujson]`` installs the ujson <https://pypi.org/project/ujson/>_ library. It will then be used for JSON de- & encoding, which can bring speed up compared to the standard json <https://docs.python.org/3/library/json.html>_ library.
 * ``pip install python-telegram-bot[socks]`` installs the PySocks <https://pypi.org/project/PySocks/>_ library. Use this, if you want to work behind a Socks5 server.
 
-===============
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Getting started
-===============
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 Our Wiki contains a lot of resources to get you started with ``python-telegram-bot``:
 
@@ -102,9 +102,10 @@ Other references:
 - Telegram API documentation <https://core.telegram.org/bots/api>_
 - python-telegram-bot documentation <https://python-telegram-bot.readthedocs.io/>_
 
--------------------
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Learning by example
--------------------
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 We believe that the best way to learn this package is by example. Here
 are some examples for you to review. Even if it is not your approach for learning, please take a
@@ -114,9 +115,9 @@ code and building on top of it.
 
 Visit this page <https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/README.md>_ to discover the official examples or look at the examples on the wiki <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Examples>_ to see other bots the community has built.
 
--------
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Logging
--------
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 This library uses the ``logging`` module. To set up logging to standard output, put:
 .. code:: python
@@ -141,15 +142,15 @@ If you want DEBUG logs instead:
     logger.setLevel(logging.DEBUG)
 
 
-=============
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Documentation
-=============
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ``python-telegram-bot``'s documentation lives at readthedocs.io <https://python-telegram-bot.readthedocs.io/>_.
 
-============
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 Getting help
-============
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 You can get help in several ways:
 
@@ -161,9 +162,13 @@ You can get help in several ways:
 
 4. You can even ask for help on Stack Overflow using the python-telegram-bot tag <https://stackoverflow.com/questions/tagged/python-telegram-bot>_.
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 𝗖𝗢𝗡𝗧𝗥𝗜𝗕𝗨𝗧𝗢𝗥𝗦 :- 
 
 - [𝗔𝗔𝗥𝗨](https://t.me/Aaru_kun) 𝐗 <a href="https://github.com/Blank-sama" alt="Blank-sama"> <img src="https://img.shields.io/badge/Aaru-90302f?logo=github" /></a>
 - [𝗟𝗘𝗩𝗜](https://t.me/LeviAckerman1709) 𝐗 <a href="https://github.com/Shauryanoobhai" alt="shauryanoobhai"> <img src="https://img.shields.io/badge/shaurya-90302f?logo=github" /></a>
 - [𝗔𝗗𝗜𝗧𝗬𝗔](https://t.me/itzAditya_xD) 𝐗 <a href="https://github.com/ItzRexModZ" alt="ItzRexModZ"> <img src="https://img.shields.io/badge/Aditya-90302f?logo=github" /></a>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
