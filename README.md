@@ -7,4 +7,4 @@
 𝗖𝗢𝗡𝗧𝗥𝗜𝗕𝗨𝗧𝗢𝗥𝗦 :- 
 
 - [𝗟𝗘𝗩𝗜](https://t.me/LeviAckerman1709) 𝐗 <a href="https://github.com/Shauryanoobhai" alt="shauryanoobhai"> <img src="https://img.shields.io/badge/shaurya-90302f?logo=github" /></a>
-- [𝗟𝗘𝗩𝗜](https://t.me/itzAditya_xD) 𝐗 <a href="https://github.com/ItzRexModZ" alt="ItzRexModZ"> <img src="https://img.shields.io/badge/Aditya-90302f?logo=github" /></a>
+- [𝗔𝗱𝗶𝘁𝘆𝗮](https://t.me/itzAditya_xD) 𝐗 <a href="https://github.com/ItzRexModZ" alt="ItzRexModZ"> <img src="https://img.shields.io/badge/Aditya-90302f?logo=github" /></a>
