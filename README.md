@@ -164,6 +164,14 @@ If you want DEBUG logs instead:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+⋟ 𝗟𝗜𝗖𝗘𝗡𝗦𝗘
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
+You may copy, distribute and modify the software provided that modifications are described and licensed for free under LGPL-3 <https://www.gnu.org/licenses/lgpl-3.0.html>_. Derivatives works (including modifications or anything statically linked to the library) can only be redistributed under LGPL-3, but applications that use the library don't have to be.
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 𝗖𝗢𝗡𝗧𝗥𝗜𝗕𝗨𝗧𝗢𝗥𝗦 :- 
 
 - [𝗔𝗔𝗥𝗨](https://t.me/Aaru_kun) 𝐗 <a href="https://github.com/Blank-sama" alt="Blank-sama"> <img src="https://img.shields.io/badge/Aaru-90302f?logo=github" /></a>
