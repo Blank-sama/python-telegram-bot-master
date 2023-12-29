@@ -162,7 +162,6 @@ If you want DEBUG logs instead:
 
 4. You can even ask for help on Stack Overflow using the python-telegram-bot tag <https://stackoverflow.com/questions/tagged/python-telegram-bot>_.
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ⋟ 𝗟𝗜𝗖𝗘𝗡𝗦𝗘
