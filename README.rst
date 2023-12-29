@@ -8,9 +8,9 @@
 
 We have made you a wrapper you can't refuse
 
-We have a vibrant community of developers helping each other in our `Telegram group <https://telegram.me/pythontelegrambotgroup>`_. Join us!
+We have a vibrant community of developers helping each other in our `Telegram group <https://t.me/Devs_Union>`_. Join us!
 
-*Stay tuned for library updates and new releases on our* `Telegram Channel <https://telegram.me/pythontelegrambotchannel>`_.
+*Stay tuned for library updates and new releases on our* `Telegram Channel <https://t.me/TheDevsUnion>`_.
 
 .. image:: https://img.shields.io/pypi/v/python-telegram-bot.svg
    :target: https://pypi.org/project/python-telegram-bot/
