@@ -8,13 +8,13 @@
 Table of contents
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-- Introduction_
+⋟ Introduction_
 
-- Telegram API support_
+⋟ Telegram API support_
 
-- Installing_
+⋟ Installing_
 
-- Getting started_
+⋟ Getting started_
 
   #. Learning by example_
 
@@ -22,14 +22,14 @@ Table of contents
 
   #. Documentation_
 
-- Getting help_
+⋟ Getting help_
 
-- Contributing_
+⋟ Contributing_
 
-- License_
+⋟ License_
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Introduction
+⋟ 𝗜𝗡𝗧𝗥𝗢𝗗𝗨𝗖𝗧𝗜𝗢𝗡 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 This library provides a pure Python interface for the
@@ -43,19 +43,19 @@ make the development of bots easy and straightforward. These classes are contain
 A pure API implementation *without* ``telegram.ext`` is available as the standalone package ``python-telegram-bot-raw``.  See here for details. <https://github.com/python-telegram-bot/python-telegram-bot/blob/master/README_RAW.rst>_
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Note:- 
+⋟ 𝗡𝗢𝗧𝗘 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 Installing both ``python-telegram-bot`` and ``python-telegram-bot-raw`` in conjunction will result in undesired side-effects, so only install *one* of both.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Telegram API support
+⋟ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗔𝗣𝗜 𝗦𝗨𝗣𝗣𝗢𝗥𝗧
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 All types and methods of the Telegram Bot API 5.6 are supported.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Installing
+⋟ 𝗜𝗡𝗦𝗧𝗔𝗟𝗟𝗜𝗡𝗚
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 You can install or upgrade python-telegram-bot with:
@@ -79,7 +79,7 @@ In case you have a previously cloned local repository already, you should initia
     $ git submodule update --init --recursive
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Optional Dependencies
+⋟ 𝗢𝗣𝗧𝗜𝗢𝗡𝗔𝗟 𝗗𝗘𝗣𝗘𝗡𝗗𝗘𝗡𝗖𝗜𝗘𝗦
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 PTB can be installed with optional dependencies:
@@ -89,22 +89,22 @@ PTB can be installed with optional dependencies:
 * ``pip install python-telegram-bot[socks]`` installs the PySocks <https://pypi.org/project/PySocks/>_ library. Use this, if you want to work behind a Socks5 server.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Getting started
+⋟ 𝗚𝗘𝗧𝗧𝗜𝗡𝗚 𝗦𝗧𝗔𝗥𝗧𝗘𝗗
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 Our Wiki contains a lot of resources to get you started with ``python-telegram-bot``:
 
-- Introduction to the API <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Introduction-to-the-API>_
+⋟ 𝗜𝗡𝗧𝗥𝗢𝗗𝗨𝗖𝗧𝗜𝗢𝗡 𝗧𝗢 𝗧𝗛𝗘 𝗔𝗣𝗜 <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Introduction-to-the-API>_
 - Tutorial: Your first Bot <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot>_
 
-Other references:
+• 𝗢𝗧𝗛𝗘𝗥 𝗥𝗘𝗙𝗘𝗥𝗘𝗡𝗖𝗘𝗦 :- 
 
-- Telegram API documentation <https://core.telegram.org/bots/api>_
-- python-telegram-bot documentation <https://python-telegram-bot.readthedocs.io/>_
+⋟ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗔𝗣𝗜 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗔𝗧𝗜𝗢𝗡 <https://core.telegram.org/bots/api>_
+⋟ 𝗧𝗘𝗟𝗘𝗚𝗘𝗡𝗜𝗖 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗔𝗧𝗜𝗢𝗡 <https://python-telegram-bot.readthedocs.io/>_
 
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Learning by example
+⋟ 𝗟𝗘𝗔𝗥𝗡𝗜𝗡𝗚 𝗕𝗬 𝗘𝗫𝗔𝗠𝗣𝗟𝗘
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 We believe that the best way to learn this package is by example. Here
@@ -113,10 +113,10 @@ look at ``echobot.py``, it is the de facto base for most of the bots out there. 
 the code for these examples are released to the public domain, so you can start by grabbing the
 code and building on top of it.
 
-Visit this page <https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/README.md>_ to discover the official examples or look at the examples on the wiki <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Examples>_ to see other bots the community has built.
+• 𝗩𝗜𝗦𝗜𝗧 𝗧𝗛𝗜𝗦 𝗣𝗔𝗚𝗘 <https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/README.md>_ to discover the official examples or look at the examples on the wiki <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Examples>_ to see other bots the community has built.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Logging
+⋟ 𝗟𝗢𝗚𝗚𝗜𝗡𝗚
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 This library uses the ``logging`` module. To set up logging to standard output, put:
@@ -143,16 +143,16 @@ If you want DEBUG logs instead:
 
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Documentation
+⋟ 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗔𝗧𝗜𝗢𝗡
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ``python-telegram-bot``'s documentation lives at readthedocs.io <https://python-telegram-bot.readthedocs.io/>_.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-Getting help
+⋟ 𝗚𝗘𝗧𝗧𝗜𝗡𝗚 𝗛𝗘𝗟𝗣
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-You can get help in several ways:
+• 𝗬𝗢𝗨 𝗖𝗔𝗡 𝗚𝗘𝗧 𝗛𝗘𝗟𝗣 𝗜𝗡 𝗦𝗘𝗩𝗘𝗥𝗔𝗟 𝗪𝗔𝗬𝗦 :- 
 
 1. We have a vibrant community of developers helping each other in our Telegram group <https://telegram.me/pythontelegrambotgroup>_. Join us!
 
