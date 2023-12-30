@@ -40,13 +40,13 @@ In addition to the pure API implementation, this library features a number of hi
 make the development of bots easy and straightforward. These classes are contained in the
 ``telegram.ext`` submodule.
 
-A pure API implementation *without* ``telegram.ext`` is available as the standalone package ``python-telegram-bot-raw``.  See here for details. <https://github.com/python-telegram-bot/python-telegram-bot/blob/master/README_RAW.rst>_
+A pure API implementation *without* ``telegram.ext`` is available as the standalone package ``python-telegram-bot-raw``.  See here for details. <https://github.com/TeleGenic/TeleGenic/blob/master/README_RAW.rst>_
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ⋟ 𝗡𝗢𝗧𝗘 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-Installing both ``python-telegram-bot`` and ``python-telegram-bot-raw`` in conjunction will result in undesired side-effects, so only install *one* of both.
+Installing both ``TeleGenic`` and ``TeleGenic-raw`` in conjunction will result in undesired side-effects, so only install *one* of both.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ⋟ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗔𝗣𝗜 𝗦𝗨𝗣𝗣𝗢𝗥𝗧
@@ -58,17 +58,17 @@ All types and methods of the Telegram Bot API 5.6 are supported.
 ⋟ 𝗜𝗡𝗦𝗧𝗔𝗟𝗟𝗜𝗡𝗚
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-You can install or upgrade python-telegram-bot with:
+You can install or upgrade TeleGenic with:
 
 .. code:: shell
 
-    $ pip install python-telegram-bot --upgrade
+    $ pip install TeleGenic --upgrade
 
 Or you can install from source with:
 
 .. code:: shell
 
-    $ git clone https://github.com/python-telegram-bot/python-telegram-bot --recursive
+    $ git clone https://github.com/TeleGenic/TeleGenic--recursive
     $ cd python-telegram-bot
     $ python setup.py install
     
@@ -82,25 +82,25 @@ In case you have a previously cloned local repository already, you should initia
 ⋟ 𝗢𝗣𝗧𝗜𝗢𝗡𝗔𝗟 𝗗𝗘𝗣𝗘𝗡𝗗𝗘𝗡𝗖𝗜𝗘𝗦
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-PTB can be installed with optional dependencies:
+TeleGenic can be installed with optional dependencies:
 
-* ``pip install python-telegram-bot[passport]`` installs the cryptography <https://cryptography.io>_ library. Use this, if you want to use Telegram Passport related functionality.
-* ``pip install python-telegram-bot[ujson]`` installs the ujson <https://pypi.org/project/ujson/>_ library. It will then be used for JSON de- & encoding, which can bring speed up compared to the standard json <https://docs.python.org/3/library/json.html>_ library.
-* ``pip install python-telegram-bot[socks]`` installs the PySocks <https://pypi.org/project/PySocks/>_ library. Use this, if you want to work behind a Socks5 server.
+* ``pip install TeleGenic[passport]`` installs the cryptography <https://cryptography.io>_ library. Use this, if you want to use Telegram Passport related functionality.
+* ``pip install TeleGenic[ujson]`` installs the ujson <https://pypi.org/project/ujson/>_ library. It will then be used for JSON de- & encoding, which can bring speed up compared to the standard json <https://docs.python.org/3/library/json.html>_ library.
+* ``pip install TeleGenic[socks]`` installs the PySocks <https://pypi.org/project/PySocks/>_ library. Use this, if you want to work behind a Socks5 server.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ⋟ 𝗚𝗘𝗧𝗧𝗜𝗡𝗚 𝗦𝗧𝗔𝗥𝗧𝗘𝗗
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-Our Wiki contains a lot of resources to get you started with ``python-telegram-bot``:
+Our Wiki contains a lot of resources to get you started with ``TeleGenic``:
 
-⋟ 𝗜𝗡𝗧𝗥𝗢𝗗𝗨𝗖𝗧𝗜𝗢𝗡 𝗧𝗢 𝗧𝗛𝗘 𝗔𝗣𝗜 <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Introduction-to-the-API>_
-- Tutorial: Your first Bot <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot>_
+⋟ 𝗜𝗡𝗧𝗥𝗢𝗗𝗨𝗖𝗧𝗜𝗢𝗡 𝗧𝗢 𝗧𝗛𝗘 𝗔𝗣𝗜 <https://github.com/TeleGenic/TeleGenic/wiki/Introduction-to-the-API>_
+- Tutorial: Your first Bot <https://github.com/TeleGenic/TeleGenic/wiki/Extensions-%E2%80%93-Your-first-Bot>_
 
 • 𝗢𝗧𝗛𝗘𝗥 𝗥𝗘𝗙𝗘𝗥𝗘𝗡𝗖𝗘𝗦 :- 
 
 ⋟ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗔𝗣𝗜 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗔𝗧𝗜𝗢𝗡 <https://core.telegram.org/bots/api>_
-⋟ 𝗧𝗘𝗟𝗘𝗚𝗘𝗡𝗜𝗖 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗔𝗧𝗜𝗢𝗡 <https://python-telegram-bot.readthedocs.io/>_
+⋟ 𝗧𝗘𝗟𝗘𝗚𝗘𝗡𝗜𝗖 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗔𝗧𝗜𝗢𝗡 <https://TeleGenic.readthedocs.io/>_
 
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
@@ -113,7 +113,7 @@ look at ``echobot.py``, it is the de facto base for most of the bots out there. 
 the code for these examples are released to the public domain, so you can start by grabbing the
 code and building on top of it.
 
-• 𝗩𝗜𝗦𝗜𝗧 𝗧𝗛𝗜𝗦 𝗣𝗔𝗚𝗘 <https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/README.md>_ to discover the official examples or look at the examples on the wiki <https://github.com/python-telegram-bot/python-telegram-bot/wiki/Examples>_ to see other bots the community has built.
+• 𝗩𝗜𝗦𝗜𝗧 𝗧𝗛𝗜𝗦 𝗣𝗔𝗚𝗘 <https://github.com/TeleGenic/TeleGenic/blob/master/examples/README.md>_ to discover the official examples or look at the examples on the wiki <https://github.com/TeleGenic/TeleGenic/wiki/Examples>_ to see other bots the community has built.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ⋟ 𝗟𝗢𝗚𝗚𝗜𝗡𝗚
@@ -146,7 +146,7 @@ If you want DEBUG logs instead:
 ⋟ 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗔𝗧𝗜𝗢𝗡
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-``python-telegram-bot``'s documentation lives at readthedocs.io <https://python-telegram-bot.readthedocs.io/>_.
+``TeleGenic``'s documentation lives at readthedocs.io <https://TeleGenic.readthedocs.io/>_.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ⋟ 𝗚𝗘𝗧𝗧𝗜𝗡𝗚 𝗛𝗘𝗟𝗣
@@ -154,13 +154,13 @@ If you want DEBUG logs instead:
 
 • 𝗬𝗢𝗨 𝗖𝗔𝗡 𝗚𝗘𝗧 𝗛𝗘𝗟𝗣 𝗜𝗡 𝗦𝗘𝗩𝗘𝗥𝗔𝗟 𝗪𝗔𝗬𝗦 :- 
 
-1. We have a vibrant community of developers helping each other in our Telegram group <https://telegram.me/pythontelegrambotgroup>_. Join us!
+1. We have a vibrant community of developers helping each other in our Telegram group <https://telegram.me/Devs_Union>_. Join us!
 
-2. Report bugs, request new features or ask questions by creating an issue <https://github.com/python-telegram-bot/python-telegram-bot/issues/new/choose>_ or a discussion <https://github.com/python-telegram-bot/python-telegram-bot/discussions/new>_.
+2. Report bugs, request new features or ask questions by creating an issue <https://github.com/TeleGenic/TeleGenic/issues/new/choose>_ or a discussion <https://github.com/TeleGenic/TeleGenic/discussions/new>_.
 
-3. Our Wiki pages <https://github.com/python-telegram-bot/python-telegram-bot/wiki/>_ offer a growing amount of resources.
+3. Our Wiki pages <https://github.com/TeleGenic/TeleGenic/wiki/>_ offer a growing amount of resources.
 
-4. You can even ask for help on Stack Overflow using the python-telegram-bot tag <https://stackoverflow.com/questions/tagged/python-telegram-bot>_.
+4. You can even ask for help on Stack Overflow using the TeleGenic tag <https://stackoverflow.com/questions/tagged/TeleGenic>_.
 
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
