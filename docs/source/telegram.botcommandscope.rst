@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/botcommandscope.py
+:github_url: https://github.com/Dev-Union/TeleGenic/TeleGenic/botcommandscope.py
 
-telegram.BotCommandScope
+TeleGenic.BotCommandScope
 ========================
 
-.. autoclass:: telegram.BotCommandScope
+.. autoclass:: TeleGenic.BotCommandScope
     :members:
     :show-inheritance:
