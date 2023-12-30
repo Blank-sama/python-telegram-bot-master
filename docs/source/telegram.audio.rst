@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/files/audio.py
+:github_url: https://github.com/Dev-Union/TeleGenic/TeleGenic/files/audio.py
 
-telegram.Audio
+TeleGenic.Audio
 ==============
 
-.. autoclass:: telegram.Audio
+.. autoclass:: TeleGenic.Audio
     :members:
     :show-inheritance:

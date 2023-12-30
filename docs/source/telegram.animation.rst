@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/files/animation.py
+:github_url: https://github.com/Dev-Union/TeleGenic/TeleGenic/files/animation.py
 
-telegram.Animation
+TeleGenic.Animation
 ==================
 
-.. autoclass:: telegram.Animation
+.. autoclass:: TeleGenic.Animation
     :members:
     :show-inheritance:

@@ -1,8 +1,9 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/bot.py
+:github_url: https://github.com/Dev-Union/TeleGenic/TeleGenic/bot.py
 
-telegram.Bot
+TeleGenic.Bot
 ============
 
-.. autoclass:: telegram.Bot
+.. autoclass:: TeleGenic.Bot
     :members:
     :show-inheritance:
+
