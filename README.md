@@ -158,7 +158,7 @@ If you want DEBUG logs instead:
 
 2. Report bugs, request new features or ask questions by creating an issue <https://github.com/TeleGenic/TeleGenic/issues/new/choose>_ or a discussion <https://github.com/TeleGenic/TeleGenic/discussions/new>_.
 
-3. Our Wiki pages <https://github.com/TeleGenic/TeleGenic/wiki/>_ offer a growing amount of resources.
+3. Our Wiki pages <https://t.me/TheDevsUnion>_ offer a growing amount of resources.
 
 4. You can even ask for help on Stack Overflow using the TeleGenic tag <https://stackoverflow.com/questions/tagged/TeleGenic>_.
 
