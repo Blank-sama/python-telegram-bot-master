@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/pollhandler.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/pollhandler.py
 
-telegram.ext.PollHandler
+TeleGenic.ext.PollHandler
 ========================
 
-.. autoclass:: telegram.ext.PollHandler
+.. autoclass:: TeleGenic.ext.PollHandler
     :members:
     :show-inheritance:

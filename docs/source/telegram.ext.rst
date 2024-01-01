@@ -1,66 +1,66 @@
-telegram.ext package
+TeleGenic.ext package
 ====================
 
 .. toctree::
 
-    telegram.ext.extbot
-    telegram.ext.updater
-    telegram.ext.dispatcher
-    telegram.ext.dispatcherhandlerstop
-    telegram.ext.callbackcontext
-    telegram.ext.job
-    telegram.ext.jobqueue
-    telegram.ext.messagequeue
-    telegram.ext.delayqueue
-    telegram.ext.contexttypes
-    telegram.ext.defaults
+    TeleGenic.ext.extbot
+    TeleGenic.ext.updater
+    TeleGenic.ext.dispatcher
+    TeleGenic.ext.dispatcherhandlerstop
+    TeleGenic.ext.callbackcontext
+    TeleGenic.ext.job
+    TeleGenic.ext.jobqueue
+    TeleGenic.ext.messagequeue
+    TeleGenic.ext.delayqueue
+    TeleGenic.ext.contexttypes
+    TeleGenic.ext.defaults
 
 Handlers
 --------
 
 .. toctree::
 
-    telegram.ext.handler
-    telegram.ext.callbackqueryhandler
-    telegram.ext.chatjoinrequesthandler
-    telegram.ext.chatmemberhandler
-    telegram.ext.choseninlineresulthandler
-    telegram.ext.commandhandler
-    telegram.ext.conversationhandler
-    telegram.ext.inlinequeryhandler
-    telegram.ext.messagehandler
-    telegram.ext.filters
-    telegram.ext.pollanswerhandler
-    telegram.ext.pollhandler
-    telegram.ext.precheckoutqueryhandler
-    telegram.ext.prefixhandler
-    telegram.ext.regexhandler
-    telegram.ext.shippingqueryhandler
-    telegram.ext.stringcommandhandler
-    telegram.ext.stringregexhandler
-    telegram.ext.typehandler
+    TeleGenic.ext.handler
+    TeleGenic.ext.callbackqueryhandler
+    TeleGenic.ext.chatjoinrequesthandler
+    TeleGenic.ext.chatmemberhandler
+    TeleGenic.ext.choseninlineresulthandler
+    TeleGenic.ext.commandhandler
+    TeleGenic.ext.conversationhandler
+    TeleGenic.ext.inlinequeryhandler
+    TeleGenic.ext.messagehandler
+    TeleGenic.ext.filters
+    TeleGenic.ext.pollanswerhandler
+    TeleGenic.ext.pollhandler
+    TeleGenic.ext.precheckoutqueryhandler
+    TeleGenic.ext.prefixhandler
+    TeleGenic.ext.regexhandler
+    TeleGenic.ext.shippingqueryhandler
+    TeleGenic.ext.stringcommandhandler
+    TeleGenic.ext.stringregexhandler
+    TeleGenic.ext.typehandler
 
 Persistence
 -----------
 
 .. toctree::
 
-    telegram.ext.basepersistence
-    telegram.ext.picklepersistence
-    telegram.ext.dictpersistence
+    TeleGenic.ext.basepersistence
+    TeleGenic.ext.picklepersistence
+    TeleGenic.ext.dictpersistence
 
 Arbitrary Callback Data
 -----------------------
 
 .. toctree::
 
-    telegram.ext.callbackdatacache
-    telegram.ext.invalidcallbackdata
+    TeleGenic.ext.callbackdatacache
+    TeleGenic.ext.invalidcallbackdata
 
 utils
 -----
 
 .. toctree::
 
-    telegram.ext.utils.promise
-    telegram.ext.utils.types
+    TeleGenic.ext.utils.promise
+    TeleGenic.ext.utils.types

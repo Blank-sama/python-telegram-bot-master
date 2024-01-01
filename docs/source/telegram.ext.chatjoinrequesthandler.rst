@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/chatjoinrequesthandler.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/chatjoinrequesthandler.py
 
-telegram.ext.ChatJoinRequestHandler
+TeleGenic.ext.ChatJoinRequestHandler
 ===================================
 
-.. autoclass:: telegram.ext.ChatJoinRequestHandler
+.. autoclass:: TeleGenic.ext.ChatJoinRequestHandler
     :members:
     :show-inheritance:

@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/commandhandler.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/commandhandler.py
 
-telegram.ext.PrefixHandler
+TeleGenic.ext.PrefixHandler
 ===========================
 
-.. autoclass:: telegram.ext.PrefixHandler
+.. autoclass:: TeleGenic.ext.PrefixHandler
     :members:
     :show-inheritance:

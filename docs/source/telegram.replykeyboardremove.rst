@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/replykeyboardremove.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/replykeyboardremove.py
 
-telegram.ReplyKeyboardRemove
+TeleGenic.ReplyKeyboardRemove
 ============================
 
-.. autoclass:: telegram.ReplyKeyboardRemove
+.. autoclass:: TeleGenic.ReplyKeyboardRemove
     :members:
     :show-inheritance:

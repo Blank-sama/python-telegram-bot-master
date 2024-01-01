@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/passport/passportelementerrors.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/passport/passportelementerrors.py
 
-telegram.PassportElementError
+TeleGenic.PassportElementError
 =============================
 
-.. autoclass:: telegram.PassportElementError
+.. autoclass:: TeleGenic.PassportElementError
     :members:
     :show-inheritance:

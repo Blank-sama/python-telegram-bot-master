@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/filters.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/filters.py
 
-telegram.ext.filters Module
+TeleGenic.ext.filters Module
 ===========================
 
-.. automodule:: telegram.ext.filters
+.. automodule:: TeleGenic.ext.filters
     :members:
     :show-inheritance:

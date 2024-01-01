@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/chatmemberhandler.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/chatmemberhandler.py
 
-telegram.ext.ChatMemberHandler
+TeleGenic.ext.ChatMemberHandler
 ==============================
 
-.. autoclass:: telegram.ext.ChatMemberHandler
+.. autoclass:: TeleGenice.ext.ChatMemberHandler
     :members:
     :show-inheritance:

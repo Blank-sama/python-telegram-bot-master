@@ -1,7 +1,7 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/callbackcontext.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/callbackcontext.py
 
-telegram.ext.CallbackContext
+TeleGenic.ext.CallbackContext
 ============================
 
-.. autoclass:: telegram.ext.CallbackContext
+.. autoclass:: TeleGenic.ext.CallbackContext
     :members:

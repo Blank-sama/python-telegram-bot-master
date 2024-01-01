@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/messagehandler.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/messagehandler.py
 
-telegram.ext.MessageHandler
+TeleGenic.ext.MessageHandler
 ===========================
 
-.. autoclass:: telegram.ext.MessageHandler
+.. autoclass:: TeleGenic.ext.MessageHandler
     :members:
     :show-inheritance:

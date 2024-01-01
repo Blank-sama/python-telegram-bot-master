@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/files/chatphoto.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/files/chatphoto.py
 
-telegram.ChatPhoto
+TeleGenic.ChatPhoto
 ==================
 
-.. autoclass:: telegram.ChatPhoto
+.. autoclass:: TeleGenic.ChatPhoto
     :members:
     :show-inheritance:

@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/regexhandler.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/regexhandler.py
 
-telegram.ext.RegexHandler
+TeleGenic.ext.RegexHandler
 =========================
 
-.. autoclass:: telegram.ext.RegexHandler
+.. autoclass:: TeleGenic.ext.RegexHandler
     :members:
     :show-inheritance:

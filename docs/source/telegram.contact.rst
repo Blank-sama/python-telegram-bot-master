@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/files/contact.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/files/contact.py
 
-telegram.Contact
+TeleGenic.Contact
 ================
 
-.. autoclass:: telegram.Contact
+.. autoclass:: TeleGenic.Contact
     :members:
     :show-inheritance:

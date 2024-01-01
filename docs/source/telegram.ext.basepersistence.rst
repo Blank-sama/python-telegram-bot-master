@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/basepersistence.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/basepersistence.py
 
-telegram.ext.BasePersistence
+TeleGenic.ext.BasePersistence
 ============================
 
-.. autoclass:: telegram.ext.BasePersistence
+.. autoclass:: TeleGenic.ext.BasePersistence
     :members:
     :show-inheritance:

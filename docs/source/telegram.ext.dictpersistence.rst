@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/dictpersistence.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/dictpersistence.py
 
-telegram.ext.DictPersistence
+TeleGenic.ext.DictPersistence
 ============================
 
-.. autoclass:: telegram.ext.DictPersistence
+.. autoclass:: TeleGenic.ext.DictPersistence
     :members:
     :show-inheritance:

@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/callbackdatacache.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/callbackdatacache.py
 
-telegram.ext.InvalidCallbackData
+TeleGenic.ext.InvalidCallbackData
 ================================
 
-.. autoclass:: telegram.ext.InvalidCallbackData
+.. autoclass:: TeleGenic.ext.InvalidCallbackData
     :members:
     :show-inheritance:

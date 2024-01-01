@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/choseninlineresulthandler.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/choseninlineresulthandler.py
 
-telegram.ext.ChosenInlineResultHandler
+TeleGenic.ext.ChosenInlineResultHandler
 ======================================
 
-.. autoclass:: telegram.ext.ChosenInlineResultHandler
+.. autoclass:: TeleGenic.ext.ChosenInlineResultHandler
     :members:
     :show-inheritance:

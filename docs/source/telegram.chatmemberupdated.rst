@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/chatmemberupdated.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/chatmemberupdated.py
 
-telegram.ChatMemberUpdated
+TeleGenic.ChatMemberUpdated
 ==========================
 
-.. autoclass:: telegram.ChatMemberUpdated
+.. autoclass:: TeleGenic.ChatMemberUpdated
     :members:
     :show-inheritance:

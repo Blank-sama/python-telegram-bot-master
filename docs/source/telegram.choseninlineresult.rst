@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/choseninlineresult.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/choseninlineresult.py
 
-telegram.ChosenInlineResult
+TeleGenic.ChosenInlineResult
 ===========================
 
-.. autoclass:: telegram.ChosenInlineResult
+.. autoclass:: TeleGenic.ChosenInlineResult
     :members:
     :show-inheritance:

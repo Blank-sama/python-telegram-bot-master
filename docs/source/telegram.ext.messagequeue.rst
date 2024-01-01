@@ -1,9 +1,9 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/messagequeue.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/messagequeue.py
 
-telegram.ext.MessageQueue
+TeleGenic.ext.MessageQueue
 =========================
 
-.. autoclass:: telegram.ext.MessageQueue
+.. autoclass:: TeleGenic.ext.MessageQueue
     :members:
     :show-inheritance:
     :special-members:

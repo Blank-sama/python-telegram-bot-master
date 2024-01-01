@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/contexttypes.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/contexttypes.py
 
-telegram.ext.ContextTypes
+TeleGenic.ext.ContextTypes
 =========================
 
-.. autoclass:: telegram.ext.ContextTypes
+.. autoclass:: TeleGenic.ext.ContextTypes
     :members:
     :show-inheritance:

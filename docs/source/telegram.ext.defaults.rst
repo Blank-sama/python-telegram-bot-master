@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/defaults.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/defaults.py
 
-telegram.ext.Defaults
+TeleGenic.ext.Defaults
 =====================
 
-.. autoclass:: telegram.ext.Defaults
+.. autoclass:: TeleGenic.ext.Defaults
     :members:
     :show-inheritance:

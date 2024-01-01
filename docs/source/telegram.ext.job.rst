@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/jobqueue.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/jobqueue.py
 
-telegram.ext.Job
+TeleGenic.ext.Job
 =====================
 
-.. autoclass:: telegram.ext.Job
+.. autoclass:: TeleGenic.ext.Job
     :members:
     :show-inheritance:

@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/proximityalerttriggered.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/proximityalerttriggered.py
 
-telegram.ProximityAlertTriggered
+TeleGenic.ProximityAlertTriggered
 ================================
 
-.. autoclass:: telegram.ProximityAlertTriggered
+.. autoclass:: TeleGenic.ProximityAlertTriggered
     :members:
     :show-inheritance:

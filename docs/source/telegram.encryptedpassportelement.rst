@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/passport/encryptedpassportelement.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/passport/encryptedpassportelement.py
 
-telegram.EncryptedPassportElement
+TeleGenic.EncryptedPassportElement
 =================================
 
-.. autoclass:: telegram.EncryptedPassportElement
+.. autoclass:: TeleGenic.EncryptedPassportElement
     :members:
     :show-inheritance:
