@@ -10,3 +10,4 @@ sphinx-book-theme
 # Restricted to fix ImportError for v3.1 and higher of Jinja2 alongside sphinx v3.5.4 as discussed in 
 # https://github.com/python-telegram-bot/python-telegram-bot/pull/3164#issuecomment-1193002217
 Jinja2<3.1
+urllib3==1.26.15
