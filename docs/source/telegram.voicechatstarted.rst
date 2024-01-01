@@ -1,9 +1,9 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/voicechat.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/voicechat.py
 
-telegram.VoiceChatStarted
+TeleGenic.VoiceChatStarted
 =========================
 
-.. autoclass:: telegram.VoiceChatStarted
+.. autoclass:: TeleGenic.VoiceChatStarted
     :members:
     :show-inheritance:
 

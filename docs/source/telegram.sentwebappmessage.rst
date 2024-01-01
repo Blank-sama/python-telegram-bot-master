@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/sentwebappmessage.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/sentwebappmessage.py
 
-telegram.SentWebAppMessage
+TeleGenic.SentWebAppMessage
 ==========================
 
-.. autoclass:: telegram.SentWebAppMessage
+.. autoclass:: TeleGenic.SentWebAppMessage
     :members:
     :show-inheritance:

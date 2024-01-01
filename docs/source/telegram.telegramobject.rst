@@ -1,6 +1,6 @@
-telegram.TelegramObject
+TeleGenic.TeleGenicObject
 =======================
 
-.. autoclass:: telegram.TelegramObject
+.. autoclass:: TeleGenic.TeleGenicObject
     :members:
     :show-inheritance:

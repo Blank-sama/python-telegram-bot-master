@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/payment/shippingaddress.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/payment/shippingaddress.py
 
-telegram.ShippingAddress
+TeleGenic.ShippingAddress
 ========================
 
-.. autoclass:: telegram.ShippingAddress
+.. autoclass:: TeleGenic.ShippingAddress
     :members:
     :show-inheritance:

@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/games/callbackgame.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/games/callbackgame.py
 
-telegram.Callbackgame
+TeleGenic.Callbackgame
 =====================
 
-.. autoclass:: telegram.CallbackGame
+.. autoclass:: TeleGenic.CallbackGame
     :members:
     :show-inheritance:

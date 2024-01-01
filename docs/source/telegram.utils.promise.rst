@@ -1,9 +1,9 @@
-telegram.utils.promise.Promise
+TeleGenic.utils.promise.Promise
 ==============================
 
-.. py:class:: telegram.utils.promise.Promise
+.. py:class:: TeleGenic.utils.promise.Promise
 
-   Shortcut for :class:`telegram.ext.utils.promise.Promise`.
+   Shortcut for :class:`TeleGenic.ext.utils.promise.Promise`.
 
-   .. deprecated:: 13.2
-      Use :class:`telegram.ext.utils.promise.Promise` instead.
+   .. deprecated:: 7.0
+      Use :class:`TeleGenic.ext.utils.promise.Promise` instead.

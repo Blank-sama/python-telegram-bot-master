@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/videochatparticipantsinvited.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/videochatparticipantsinvited.py
 
-telegram.VideoChatParticipantsInvited
+TeleGenic.VideoChatParticipantsInvited
 =====================================
 
-.. autoclass:: telegram.VideoChatParticipantsInvited
+.. autoclass:: TeleGenic.VideoChatParticipantsInvited
     :members:
     :show-inheritance:

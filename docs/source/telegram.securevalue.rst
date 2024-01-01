@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/passport/credentials.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/passport/credentials.py
 
-telegram.SecureValue
+TeleGenic.SecureValue
 ====================
 
-.. autoclass:: telegram.SecureValue
+.. autoclass:: TeleGenic.SecureValue
     :members:
     :show-inheritance:

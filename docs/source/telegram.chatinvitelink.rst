@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/chatinvitelink.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/chatinvitelink.py
 
-telegram.ChatInviteLink
+TeleGenic.ChatInviteLink
 =======================
 
-.. autoclass:: telegram.ChatInviteLink
+.. autoclass:: TeleGenic.ChatInviteLink
     :members:
     :show-inheritance:

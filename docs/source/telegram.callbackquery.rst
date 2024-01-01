@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/callbackquery.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/callbackquery.py
 
-telegram.CallbackQuery
+TeleGenic.CallbackQuery
 ======================
 
-.. autoclass:: telegram.CallbackQuery
+.. autoclass:: TeleGenic.CallbackQuery
     :members:
     :show-inheritance:

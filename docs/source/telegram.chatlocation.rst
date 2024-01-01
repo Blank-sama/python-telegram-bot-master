@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/chatlocation.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/chatlocation.py
 
-telegram.ChatLocation
+TeleGenic.ChatLocation
 =====================
 
-.. autoclass:: telegram.ChatLocation
+.. autoclass:: TeleGenic.ChatLocation
     :members:
     :show-inheritance:

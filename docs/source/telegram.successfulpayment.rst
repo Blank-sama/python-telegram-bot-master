@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/payment/successfulpayment.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/payment/successfulpayment.py
 
-telegram.SuccessfulPayment
+TeleGenic.SuccessfulPayment
 ==========================
 
-.. autoclass:: telegram.SuccessfulPayment
+.. autoclass:: TeleGenic.SuccessfulPayment
     :members:
     :show-inheritance:

@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/videochatscheduled.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/videochatscheduled.py
 
-telegram.VideoChatScheduled
+TeleGenic.VideoChatScheduled
 ===========================
 
-.. autoclass:: telegram.VideoChatScheduled
+.. autoclass:: TeleGenic.VideoChatScheduled
     :members:
     :show-inheritance:

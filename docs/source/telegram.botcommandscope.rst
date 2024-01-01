@@ -1,4 +1,4 @@
-:github_url: https://github.com/Dev-Union/TeleGenic/TeleGenic/botcommandscope.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/botcommandscope.py
 
 TeleGenic.BotCommandScope
 ========================

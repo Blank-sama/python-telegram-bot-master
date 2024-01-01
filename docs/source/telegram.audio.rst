@@ -1,4 +1,4 @@
-:github_url: https://github.com/Dev-Union/TeleGenic/TeleGenic/files/audio.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/files/audio.py
 
 TeleGenic.Audio
 ==============
