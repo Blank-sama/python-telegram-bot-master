@@ -41,11 +41,11 @@ except ImportError:
 
     CRYPTO_INSTALLED = False
 
-from teleGenic import TeleGenicError, TeleGenicObject
-from teleGenic.utils.types import JSONDict
+from TeleGenic import TeleGenicError, TeleGenicObject
+from TeleGenic.utils.types import JSONDict
 
 if TYPE_CHECKING:
-    from telegenic import Bot
+    from TeleGenic import Bot
 
 
 class TeleGenicDecryptionError(TeleGenicError):
