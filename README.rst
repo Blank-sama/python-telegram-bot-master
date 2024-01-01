@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 
-.. image:: https://raw.githubusercontent.com/python-telegram-bot/logos/master/logo-text/png/ptb-logo-text_768.png
+.. image:: https://raw.githubusercontent.com/Blank-sama/python-telegram-bot-master/blob/music/docs/source/Telegenic.png
    :align: center
    :target: https://python-telegram-bot.org
    :alt: python-telegram-bot Logo
