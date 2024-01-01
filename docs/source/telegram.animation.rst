@@ -6,3 +6,4 @@ TeleGenic.Animation
 .. autoclass:: TeleGenic.Animation
     :members:
     :show-inheritance:
+   
