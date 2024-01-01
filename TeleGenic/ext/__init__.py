@@ -46,7 +46,7 @@ from .choseninlineresulthandler import ChosenInlineResultHandler
 from .inlinequeryhandler import InlineQueryHandler
 from .filters import BaseFilter, MessageFilter, UpdateFilter, Filters
 from .messagehandler import MessageHandler
-from .commandhandler import CommandHandler, PrefixHandler
+from .commandhandler import Command, PrefixHandler
 from .regexhandler import RegexHandler
 from .stringcommandhandler import StringCommandHandler
 from .stringregexhandler import StringRegexHandler
@@ -72,7 +72,7 @@ __all__ = (
     'ChatJoinRequestHandler',
     'ChatMemberHandler',
     'ChosenInlineResultHandler',
-    'CommandHandler',
+    'Command',
     'ContextTypes',
     'ConversationHandler',
     'Defaults',

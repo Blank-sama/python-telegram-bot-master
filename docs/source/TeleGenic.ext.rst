@@ -25,7 +25,7 @@ Handlers
     TeleGenic.ext.chatjoinrequesthandler
     TeleGenic.ext.chatmemberhandler
     TeleGenic.ext.choseninlineresulthandler
-    TeleGenic.ext.commandhandler
+    TeleGenic.ext.command
     TeleGenic.ext.conversationhandler
     TeleGenic.ext.inlinequeryhandler
     TeleGenic.ext.messagehandler

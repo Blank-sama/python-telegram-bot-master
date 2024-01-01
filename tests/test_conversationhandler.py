@@ -36,7 +36,7 @@ from TeleGenic import (
 )
 from TeleGenic.ext import (
     ConversationHandler,
-    CommandHandler,
+    Command,
     CallbackQueryHandler,
     MessageHandler,
     Filters,
@@ -111,46 +111,46 @@ class TestConversationHandler:
         self.raise_dp_handler_stop = False
         self.test_flag = False
         self.current_state = {}
-        self.entry_points = [CommandHandler('start', self.start)]
+        self.entry_points = [Command('start', self.start)]
         self.states = {
-            self.THIRSTY: [CommandHandler('brew', self.brew), CommandHandler('wait', self.start)],
-            self.BREWING: [CommandHandler('pourCoffee', self.drink)],
+            self.THIRSTY: [Command('brew', self.brew), Command('wait', self.start)],
+            self.BREWING: [Command('pourCoffee', self.drink)],
             self.DRINKING: [
-                CommandHandler('startCoding', self.code),
-                CommandHandler('drinkMore', self.drink),
-                CommandHandler('end', self.end),
+                Command('startCoding', self.code),
+                Command('drinkMore', self.drink),
+                Command('end', self.end),
             ],
             self.CODING: [
-                CommandHandler('keepCoding', self.code),
-                CommandHandler('gettingThirsty', self.start),
-                CommandHandler('drinkMore', self.drink),
+                Command('keepCoding', self.code),
+                Command('gettingThirsty', self.start),
+                Command('drinkMore', self.drink),
             ],
         }
-        self.fallbacks = [CommandHandler('eat', self.start)]
+        self.fallbacks = [Command('eat', self.start)]
         self.is_timeout = False
 
         # for nesting tests
         self.nested_states = {
-            self.THIRSTY: [CommandHandler('brew', self.brew), CommandHandler('wait', self.start)],
-            self.BREWING: [CommandHandler('pourCoffee', self.drink)],
+            self.THIRSTY: [Command('brew', self.brew), Command('wait', self.start)],
+            self.BREWING: [Command('pourCoffee', self.drink)],
             self.CODING: [
-                CommandHandler('keepCoding', self.code),
-                CommandHandler('gettingThirsty', self.start),
-                CommandHandler('drinkMore', self.drink),
+                Command('keepCoding', self.code),
+                Command('gettingThirsty', self.start),
+                Command('drinkMore', self.drink),
             ],
         }
-        self.drinking_entry_points = [CommandHandler('hold', self.hold)]
+        self.drinking_entry_points = [Command('hold', self.hold)]
         self.drinking_states = {
-            self.HOLDING: [CommandHandler('sip', self.sip)],
-            self.SIPPING: [CommandHandler('swallow', self.swallow)],
-            self.SWALLOWING: [CommandHandler('hold', self.hold)],
+            self.HOLDING: [Command('sip', self.sip)],
+            self.SIPPING: [Command('swallow', self.swallow)],
+            self.SWALLOWING: [Command('hold', self.hold)],
         }
         self.drinking_fallbacks = [
-            CommandHandler('replenish', self.replenish),
-            CommandHandler('stop', self.stop),
-            CommandHandler('end', self.end),
-            CommandHandler('startCoding', self.code),
-            CommandHandler('drinkMore', self.drink),
+            Command('replenish', self.replenish),
+            Command('stop', self.stop),
+            Command('end', self.end),
+            Command('startCoding', self.code),
+            Command('drinkMore', self.drink),
         ]
         self.drinking_entry_points.extend(self.drinking_fallbacks)
 
@@ -444,7 +444,7 @@ class TestConversationHandler:
 
     def test_unknown_state_warning(self, dp, bot, user1, recwarn):
         handler = ConversationHandler(
-            entry_points=[CommandHandler("start", lambda u, c: 1)],
+            entry_points=[Command("start", lambda u, c: 1)],
             states={
                 1: [TypeHandler(Update, lambda u, c: 69)],
                 2: [TypeHandler(Update, lambda u, c: -1)],
@@ -588,7 +588,7 @@ class TestConversationHandler:
 
     def test_end_on_first_message(self, dp, bot, user1):
         handler = ConversationHandler(
-            entry_points=[CommandHandler('start', self.start_end)], states={}, fallbacks=[]
+            entry_points=[Command('start', self.start_end)], states={}, fallbacks=[]
         )
         dp.add_handler(handler)
 
@@ -610,7 +610,7 @@ class TestConversationHandler:
     def test_end_on_first_message_async(self, dp, bot, user1):
         handler = ConversationHandler(
             entry_points=[
-                CommandHandler(
+                Command(
                     'start', lambda bot, update: dp.block(self.start_end, bot, update)
                 )
             ],
@@ -646,7 +646,7 @@ class TestConversationHandler:
 
     def test_end_on_first_message_async_handler(self, dp, bot, user1):
         handler = ConversationHandler(
-            entry_points=[CommandHandler('start', self.start_end, block=True)],
+            entry_points=[Command('start', self.start_end, block=True)],
             states={},
             fallbacks=[],
         )
@@ -679,7 +679,7 @@ class TestConversationHandler:
 
     def test_none_on_first_message(self, dp, bot, user1):
         handler = ConversationHandler(
-            entry_points=[CommandHandler('start', self.start_none)], states={}, fallbacks=[]
+            entry_points=[Command('start', self.start_none)], states={}, fallbacks=[]
         )
         dp.add_handler(handler)
 
@@ -691,7 +691,7 @@ class TestConversationHandler:
     def test_none_on_first_message_async(self, dp, bot, user1):
         handler = ConversationHandler(
             entry_points=[
-                CommandHandler(
+                Command(
                     'start', lambda bot, update: dp.block(self.start_none, bot, update)
                 )
             ],
@@ -726,7 +726,7 @@ class TestConversationHandler:
 
     def test_none_on_first_message_async_handler(self, dp, bot, user1):
         handler = ConversationHandler(
-            entry_points=[CommandHandler('start', self.start_none, block=True)],
+            entry_points=[Command('start', self.start_none, block=True)],
             states={},
             fallbacks=[],
         )
@@ -758,7 +758,7 @@ class TestConversationHandler:
 
     def test_per_chat_message_without_chat(self, bot, user1):
         handler = ConversationHandler(
-            entry_points=[CommandHandler('start', self.start_end)], states={}, fallbacks=[]
+            entry_points=[Command('start', self.start_end)], states={}, fallbacks=[]
         )
         cbq = CallbackQuery(0, user1, None, None, bot=bot)
         update = Update(0, callback_query=cbq)
@@ -778,7 +778,7 @@ class TestConversationHandler:
 
     def test_all_update_types(self, dp, bot, user1):
         handler = ConversationHandler(
-            entry_points=[CommandHandler('start', self.start_end)], states={}, fallbacks=[]
+            entry_points=[Command('start', self.start_end)], states={}, fallbacks=[]
         )
         message = Message(0, None, self.group, from_user=user1, text='ignore', bot=bot)
         callback_query = CallbackQuery(0, user1, None, message=message, data='data', bot=bot)
@@ -877,7 +877,7 @@ class TestConversationHandler:
             raise Exception("promise exception")
 
         handler = ConversationHandler(
-            entry_points=[CommandHandler("start", conv_entry)],
+            entry_points=[Command("start", conv_entry)],
             states={1: [MessageHandler(Filters.all, raise_error)]},
             fallbacks=self.fallbacks,
             block=True,
@@ -1036,10 +1036,10 @@ class TestConversationHandler:
             return self.start(u, c)
 
         states = self.states
-        timeout_handler = CommandHandler('start', None)
+        timeout_handler = Command('start', None)
         states.update({ConversationHandler.TIMEOUT: [timeout_handler]})
         handler = ConversationHandler(
-            entry_points=[CommandHandler('start', start_callback)],
+            entry_points=[Command('start', start_callback)],
             states=states,
             fallbacks=self.fallbacks,
             conversation_timeout=0.5,
@@ -1162,7 +1162,7 @@ class TestConversationHandler:
         states.update(
             {
                 ConversationHandler.TIMEOUT: [
-                    CommandHandler('brew', self.passout),
+                    Command('brew', self.passout),
                     MessageHandler(~Filters.regex('oding'), self.passout2),
                 ]
             }
@@ -1175,7 +1175,7 @@ class TestConversationHandler:
         )
         dp.add_handler(handler)
 
-        # CommandHandler timeout
+        # Command timeout
         message = Message(
             0,
             None,
@@ -1222,7 +1222,7 @@ class TestConversationHandler:
         states.update(
             {
                 ConversationHandler.TIMEOUT: [
-                    CommandHandler('brew', self.passout_context),
+                    Command('brew', self.passout_context),
                     MessageHandler(~Filters.regex('oding'), self.passout2_context),
                 ]
             }
@@ -1235,7 +1235,7 @@ class TestConversationHandler:
         )
         cdp.add_handler(handler)
 
-        # CommandHandler timeout
+        # Command timeout
         message = Message(
             0,
             None,
@@ -1294,7 +1294,7 @@ class TestConversationHandler:
             # we can see if the timeout has been executed
 
         states = self.states
-        states[self.THIRSTY].append(CommandHandler('slowbrew', slowbrew))
+        states[self.THIRSTY].append(Command('slowbrew', slowbrew))
         states.update({ConversationHandler.TIMEOUT: [MessageHandler(None, self.passout2)]})
 
         handler = ConversationHandler(
@@ -1305,7 +1305,7 @@ class TestConversationHandler:
         )
         dp.add_handler(handler)
 
-        # CommandHandler timeout
+        # Command timeout
         message = Message(
             0,
             None,
@@ -1337,7 +1337,7 @@ class TestConversationHandler:
                     ConversationHandler(
                         entry_points=self.entry_points,
                         states={
-                            self.BREWING: [CommandHandler('pourCoffee', self.drink)],
+                            self.BREWING: [Command('pourCoffee', self.drink)],
                         },
                         fallbacks=self.fallbacks,
                     )
@@ -1346,7 +1346,7 @@ class TestConversationHandler:
                     ConversationHandler(
                         entry_points=self.entry_points,
                         states={
-                            self.CODING: [CommandHandler('startCoding', self.code)],
+                            self.CODING: [Command('startCoding', self.code)],
                         },
                         fallbacks=self.fallbacks,
                     )
@@ -1366,8 +1366,8 @@ class TestConversationHandler:
         ConversationHandler(
             entry_points=self.entry_points,
             states={
-                self.THIRSTY: [CommandHandler('pourCoffee', self.drink)],
-                self.BREWING: [CommandHandler('startCoding', self.code)],
+                self.THIRSTY: [Command('pourCoffee', self.drink)],
+                self.BREWING: [Command('startCoding', self.code)],
             },
             fallbacks=self.fallbacks,
             per_message=True,
@@ -1687,7 +1687,7 @@ class TestConversationHandler:
 
     def test_conversation_handler_run_async_false(self, dp):
         conv_handler = ConversationHandler(
-            entry_points=[CommandHandler('start', self.start_end, block=True)],
+            entry_points=[Command('start', self.start_end, block=True)],
             states=self.states,
             fallbacks=self.fallbacks,
             block=False,

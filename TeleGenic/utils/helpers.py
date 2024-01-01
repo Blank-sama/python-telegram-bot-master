@@ -392,7 +392,7 @@ def create_deep_linked_url(bot_username: str, payload: str = None, group: bool =
 
     Note:
         Works well in conjunction with
-        ``CommandHandler("start", callback, filters = Filters.regex('payload'))``
+        ``Command("start", callback, filters = Filters.regex('payload'))``
 
     Examples:
         ``create_deep_linked_url(bot.get_me().username, "some-params")``

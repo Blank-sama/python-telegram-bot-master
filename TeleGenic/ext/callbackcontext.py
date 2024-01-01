@@ -76,8 +76,8 @@ class CallbackContext(Generic[UD, CD, BD]):
             Note that filters short circuit, so combined regex filters will not always
             be evaluated.
         args (List[:obj:`str`]): Optional. Arguments passed to a command if the associated update
-            is handled by :class:`TeleGenic.ext.CommandHandler`, :class:`TeleGenic.ext.PrefixHandler`
-            or :class:`TeleGenic.ext.StringCommandHandler`. It contains a list of the words in the
+            is handled by :class:`TeleGenic.ext.Command`, :class:`TeleGenic.ext.PrefixHandler`
+            or :class:`TeleGenic.ext.StringCommand`. It contains a list of the words in the
             text after the command, using any whitespace string as a delimiter.
         error (:obj:`Exception`): Optional. The error that was raised. Only present when passed
             to a error handler registered with :attr:`TeleGenic.ext.Dispatcher.add_error_handler`.

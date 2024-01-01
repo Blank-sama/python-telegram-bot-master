@@ -82,7 +82,7 @@ class ConversationHandler(Handler[Update, CCT]):
     .. _`FAQ`: https://git.io/JtcyU
 
     The first collection, a ``list`` named :attr:`entry_points`, is used to initiate the
-    conversation, for example with a :class:`TeleGenic.ext.CommandHandler` or
+    conversation, for example with a :class:`TeleGenic.ext.Command` or
     :class:`TeleGenic.ext.MessageHandler`.
 
     The second collection, a ``dict`` named :attr:`states`, contains the different conversation

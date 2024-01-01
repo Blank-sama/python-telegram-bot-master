@@ -36,7 +36,7 @@ if TYPE_CHECKING:
 RT = TypeVar('RT')
 
 
-class CommandHandler(Handler[Update, CCT]):
+class Command(Handler[Update, CCT]):
     """Handler class to handle TeleGenic commands.
 
     Commands are TeleGenic messages that start with ``/``, optionally followed by an ``@`` and the
@@ -48,7 +48,7 @@ class CommandHandler(Handler[Update, CCT]):
     use ``~Filters.update.edited_message`` in the filter argument.
 
     Note:
-        * :class:`CommandHandler` does *not* handle (edited) channel posts.
+        * :class:`Command` does *not* handle (edited) channel posts.
         * :attr:`pass_user_data` and :attr:`pass_chat_data` determine whether a :obj:`dict` you
           can use to keep any data in will be sent to the :attr:`callback` function. Related to
           either the user or the chat that the update was sent in. For each update from the same
@@ -246,11 +246,11 @@ class CommandHandler(Handler[Update, CCT]):
                 context.update(check_result[1])
 
 
-class PrefixHandler(CommandHandler):
+class PrefixHandler(Command):
     """Handler class to handle custom prefix commands.
 
-    This is a intermediate handler between :class:`MessageHandler` and :class:`CommandHandler`.
-    It supports configurable commands with the same options as CommandHandler. It will respond to
+    This is a intermediate handler between :class:`MessageHandler` and :class:`Command`.
+    It supports configurable commands with the same options as Command. It will respond to
     every combination of :attr:`prefix` and :attr:`command`. It will add a ``list`` to the
     :class:`CallbackContext` named :attr:`CallbackContext.args`. It will contain a list of strings,
     which is the text following the command split on single or consecutive whitespace characters.
