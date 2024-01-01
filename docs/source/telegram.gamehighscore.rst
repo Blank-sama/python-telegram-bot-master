@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/games/gamehighscore.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/games/gamehighscore.py
 
-telegram.GameHighScore
+TeleGenic.GameHighScore
 ======================
 
-.. autoclass:: telegram.GameHighScore
+.. autoclass:: TeleGenic.GameHighScore
     :members:
     :show-inheritance:

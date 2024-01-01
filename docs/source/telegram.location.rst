@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/files/location.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/files/location.py
 
-telegram.Location
+TeleGenic.Location
 =================
 
-.. autoclass:: telegram.Location
+.. autoclass:: TeleGenic.Location
     :members:
     :show-inheritance:

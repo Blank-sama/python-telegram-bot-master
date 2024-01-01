@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/forumtopic.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/forumtopic.py
 
-telegram.ForumTopic
+TeleGenic.ForumTopic
 ===================
 
-.. autoclass:: telegram.ForumTopic
+.. autoclass:: TeleGenic.ForumTopic
     :members:
     :show-inheritance:

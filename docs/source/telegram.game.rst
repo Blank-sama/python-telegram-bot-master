@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/games/game.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/games/game.py
 
-telegram.Game
+TeleGenic.Game
 =============
 
-.. autoclass:: telegram.Game
+.. autoclass:: TeleGenic.Game
     :members:
     :show-inheritance:

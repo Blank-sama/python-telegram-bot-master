@@ -3,6 +3,6 @@
 TeleGenic.PassportElementErrorTranslationFiles
 =============================================
 
-.. autoclass:: TeleGenice.PassportElementErrorTranslationFiles
+.. autoclass:: TeleGenic.PassportElementErrorTranslationFiles
     :members:
     :show-inheritance:

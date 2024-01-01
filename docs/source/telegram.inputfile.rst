@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/files/inputfile.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/files/inputfile.py
 
-telegram.InputFile
+TeleGenic.InputFile
 ==================
 
-.. autoclass:: telegram.InputFile
+.. autoclass:: TeleGenic.InputFile
     :members:
     :show-inheritance:

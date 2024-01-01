@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inlinequeryresultcachedaudio.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inlinequeryresultcachedaudio.py
 
-telegram.InlineQueryResultCachedAudio
+TeleGenic.InlineQueryResultCachedAudio
 =====================================
 
-.. autoclass:: telegram.InlineQueryResultCachedAudio
+.. autoclass:: TeleGenic.InlineQueryResultCachedAudio
     :members:
     :show-inheritance:

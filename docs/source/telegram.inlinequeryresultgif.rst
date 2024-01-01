@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inlinequeryresultgif.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inlinequeryresultgif.py
 
-telegram.InlineQueryResultGif
+TeleGenic.InlineQueryResultGif
 =============================
 
-.. autoclass:: telegram.InlineQueryResultGif
+.. autoclass:: TeleGenic.InlineQueryResultGif
     :members:
     :show-inheritance:

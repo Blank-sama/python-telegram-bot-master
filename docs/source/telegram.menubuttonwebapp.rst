@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/menubutton.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/menubutton.py
 
-telegram.MenuButtonWebApp
+TeleGenic.MenuButtonWebApp
 =========================
 
-.. autoclass:: telegram.MenuButtonWebApp
+.. autoclass:: TeleGenic.MenuButtonWebApp
     :members:
     :show-inheritance:

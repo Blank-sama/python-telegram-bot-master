@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inlinekeyboardmarkup.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inlinekeyboardmarkup.py
 
-telegram.InlineKeyboardMarkup
+TeleGenic.InlineKeyboardMarkup
 =============================
 
-.. autoclass:: telegram.InlineKeyboardMarkup
+.. autoclass:: TeleGenic.InlineKeyboardMarkup
     :members:
     :show-inheritance:

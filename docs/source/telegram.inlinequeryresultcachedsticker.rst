@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inlinequeryresultcachedsticker.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inlinequeryresultcachedsticker.py
 
-telegram.InlineQueryResultCachedSticker
+TeleGenic.InlineQueryResultCachedSticker
 =======================================
 
-.. autoclass:: telegram.InlineQueryResultCachedSticker
+.. autoclass:: TeleGenic.InlineQueryResultCachedSticker
     :members:
     :show-inheritance:

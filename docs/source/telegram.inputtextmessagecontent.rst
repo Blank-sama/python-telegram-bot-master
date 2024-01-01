@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inputtextmessagecontent.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inputtextmessagecontent.py
 
-telegram.InputTextMessageContent
+TeleGenic.InputTextMessageContent
 ================================
 
-.. autoclass:: telegram.InputTextMessageContent
+.. autoclass:: TeleGenic.InputTextMessageContent
     :members:
     :show-inheritance:

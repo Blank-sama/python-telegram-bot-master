@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/keyboardbuttonpolltype.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/keyboardbuttonpolltype.py
 
-telegram.KeyboardButtonPollType
+TeleGenic.KeyboardButtonPollType
 ===============================
 
-.. autoclass:: telegram.KeyboardButtonPollType
+.. autoclass:: TeleGenic.KeyboardButtonPollType
     :members:
     :show-inheritance:

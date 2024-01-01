@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/passport/passportdata.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/passport/passportdata.py
 
-telegram.PassportData
+TeleGenic.PassportData
 =====================
 
-.. autoclass:: telegram.PassportData
+.. autoclass:: TeleGenic.PassportData
     :members:
     :show-inheritance:

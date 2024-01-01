@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inlinequeryresultlocation.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inlinequeryresultlocation.py
 
-telegram.InlineQueryResultLocation
+TeleGenic.InlineQueryResultLocation
 ==================================
 
-.. autoclass:: telegram.InlineQueryResultLocation
+.. autoclass:: TeleGenic.InlineQueryResultLocation
     :members:
     :show-inheritance:

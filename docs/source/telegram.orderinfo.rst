@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/payment/orderinfo.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/payment/orderinfo.py
 
-telegram.OrderInfo
+TeleGenic.OrderInfo
 ==================
 
-.. autoclass:: telegram.OrderInfo
+.. autoclass:: TeleGenic.OrderInfo
     :members:
     :show-inheritance:

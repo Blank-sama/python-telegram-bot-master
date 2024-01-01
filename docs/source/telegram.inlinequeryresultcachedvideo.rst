@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inlinequeryresultcachedvideo.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inlinequeryresultcachedvideo.py
 
-telegram.InlineQueryResultCachedVideo
+TeleGenic.InlineQueryResultCachedVideo
 =====================================
 
-.. autoclass:: telegram.InlineQueryResultCachedVideo
+.. autoclass:: TeleGenic.InlineQueryResultCachedVideo
     :members:
     :show-inheritance:

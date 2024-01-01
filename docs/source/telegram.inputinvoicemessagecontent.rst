@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inputinvoicemessagecontent.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inputinvoicemessagecontent.py
 
-telegram.InputInvoiceMessageContent
+TeleGenic.InputInvoiceMessageContent
 ===================================
 
-.. autoclass:: telegram.InputInvoiceMessageContent
+.. autoclass:: TeleGenic.InputInvoiceMessageContent
     :members:
     :show-inheritance:

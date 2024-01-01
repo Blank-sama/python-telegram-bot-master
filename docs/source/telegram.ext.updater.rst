@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/updater.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/updater.py
 
-telegram.ext.Updater
+TeleGenic.ext.Updater
 ====================
 
-.. autoclass:: telegram.ext.Updater
+.. autoclass:: TeleGenic.ext.Updater
     :members:
     :show-inheritance:

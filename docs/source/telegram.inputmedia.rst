@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/files/inputmedia.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/files/inputmedia.py
 
-telegram.InputMedia
+TeleGenic.InputMedia
 ===================
 
-.. autoclass:: telegram.InputMedia
+.. autoclass:: TeleGenic.InputMedia
     :members:
     :show-inheritance:

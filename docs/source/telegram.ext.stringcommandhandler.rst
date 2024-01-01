@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/stringcommandhandler.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/stringcommandhandler.py
 
-telegram.ext.StringCommandHandler
+TeleGenic.ext.StringCommandHandler
 =================================
 
-.. autoclass:: telegram.ext.StringCommandHandler
+.. autoclass:: TeleGenic.ext.StringCommandHandler
     :members:
     :show-inheritance:

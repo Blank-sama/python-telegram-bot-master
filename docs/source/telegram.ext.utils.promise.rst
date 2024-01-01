@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/ext/utils/promise.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/ext/utils/promise.py
 
-telegram.ext.utils.promise.Promise
+TeleGenic.ext.utils.promise.Promise
 ==================================
 
-.. autoclass:: telegram.ext.utils.promise.Promise
+.. autoclass:: TeleGenic.ext.utils.promise.Promise
     :members:
     :show-inheritance:

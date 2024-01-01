@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/inline/inlinequeryresultcacheddocument.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/inline/inlinequeryresultcacheddocument.py
 
-telegram.InlineQueryResultCachedDocument
+TeleGenic.InlineQueryResultCachedDocument
 ========================================
 
-.. autoclass:: telegram.InlineQueryResultCachedDocument
+.. autoclass:: TeleGenic.InlineQueryResultCachedDocument
     :members:
     :show-inheritance:

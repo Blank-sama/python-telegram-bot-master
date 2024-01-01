@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/messageid.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/messageid.py
 
-telegram.MessageId
+TeleGenic.MessageId
 ==================
 
-.. autoclass:: telegram.MessageId
+.. autoclass:: TeleGenic.MessageId
     :members:
     :show-inheritance:

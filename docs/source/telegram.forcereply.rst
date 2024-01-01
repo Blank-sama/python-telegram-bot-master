@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/forcereply.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/forcereply.py
 
-telegram.ForceReply
+TeleGenic.ForceReply
 ===================
 
-.. autoclass:: telegram.ForceReply
+.. autoclass:: TeleGenic.ForceReply
     :members:
     :show-inheritance:

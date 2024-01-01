@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/payment/labeledprice.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/payment/labeledprice.py
 
-telegram.LabeledPrice
+TeleGenic.LabeledPrice
 =====================
 
-.. autoclass:: telegram.LabeledPrice
+.. autoclass:: TeleGenic.LabeledPrice
     :members:
     :show-inheritance:

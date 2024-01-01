@@ -1,8 +1,8 @@
-:github_url: https://github.com/python-telegram-bot/python-telegram-bot/blob/v13.x/telegram/loginurl.py
+:github_url: https://github.com/Dev-Union/TeleGenic/blob/main/TeleGenic/loginurl.py
 
-telegram.LoginUrl
+TeleGenic.LoginUrl
 =================
 
-.. autoclass:: telegram.LoginUrl
+.. autoclass:: TeleGenic.LoginUrl
     :members:
     :show-inheritance:

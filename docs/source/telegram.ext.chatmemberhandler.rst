@@ -3,6 +3,6 @@
 TeleGenic.ext.ChatMemberHandler
 ==============================
 
-.. autoclass:: TeleGenice.ext.ChatMemberHandler
+.. autoclass:: TeleGenic.ext.ChatMemberHandler
     :members:
     :show-inheritance:
