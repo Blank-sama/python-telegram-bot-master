@@ -1,4 +1,4 @@
-sphinx==4.1.x
+sphinx==4.2.0
 # sphinx breaks because it relies on an removed param from jinja2, so pinning to old version
 Jinja2<3.1
 sphinx-pypi-upload
