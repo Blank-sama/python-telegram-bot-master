@@ -95,7 +95,7 @@ class Update(TeleGenicObject):
             :attr:`TeleGenic.ChatPermissions.can_invite_users` administrator right in the chat to
             receive these updates.
 
-            .. versionadded:: 13.8
+            ..
         **kwargs (:obj:`dict`): Arbitrary keyword arguments.
 
     Attributes:
