@@ -21,17 +21,17 @@ import re
 import warnings
 from typing import TYPE_CHECKING, Callable, Dict, List, Optional, Tuple, TypeVar, Union
 
-from telegram import MessageEntity, Update
-from telegram.ext import BaseFilter, Filters
-from telegram.utils.deprecate import TelegramDeprecationWarning
-from telegram.utils.types import SLT
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic import MessageEntity, Update
+from TeleGenic.ext import BaseFilter, Filters
+from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning
+from TeleGenic.utils.types import SLT
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
 
 from .utils.types import CCT
 from .handler import Handler
 
 if TYPE_CHECKING:
-    from telegram.ext import Dispatcher
+    from TeleGenic.ext import Dispatcher
 
 RT = TypeVar('RT')
 
@@ -144,7 +144,7 @@ class CommandHandler(Handler[Update, CCT]):
         pass_job_queue: bool = False,
         pass_user_data: bool = False,
         pass_chat_data: bool = False,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
     ):
         super().__init__(
             callback,
@@ -152,7 +152,7 @@ class CommandHandler(Handler[Update, CCT]):
             pass_job_queue=pass_job_queue,
             pass_user_data=pass_user_data,
             pass_chat_data=pass_chat_data,
-            run_async=run_async,
+            block=block,
         )
 
         if isinstance(command, str):
@@ -173,7 +173,7 @@ class CommandHandler(Handler[Update, CCT]):
                 'allow_edited is deprecated. See '
                 'https://github.com/python-telegram-bot/python-telegram-bot/wiki/Transition'
                 '-guide-to-Version-12.0 for more info',
-                TelegramDeprecationWarning,
+                TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
             if not allow_edited:
@@ -371,7 +371,7 @@ class PrefixHandler(CommandHandler):
         pass_job_queue: bool = False,
         pass_user_data: bool = False,
         pass_chat_data: bool = False,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
     ):
 
         self._prefix: List[str] = []
@@ -388,7 +388,7 @@ class PrefixHandler(CommandHandler):
             pass_job_queue=pass_job_queue,
             pass_user_data=pass_user_data,
             pass_chat_data=pass_chat_data,
-            run_async=run_async,
+            block=block,
         )
 
         self.prefix = prefix  # type: ignore[assignment]

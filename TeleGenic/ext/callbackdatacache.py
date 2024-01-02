@@ -26,22 +26,22 @@ from uuid import uuid4
 
 from cachetools import LRUCache  # pylint: disable=E0401
 
-from telegram import (
+from TeleGenic import (
     InlineKeyboardMarkup,
     InlineKeyboardButton,
-    TelegramError,
+    TeleGenicError,
     CallbackQuery,
     Message,
     User,
 )
-from telegram.utils.helpers import to_float_timestamp
-from telegram.ext.utils.types import CDCData
+from TeleGenic.utils.helpers import to_float_timestamp
+from TeleGenic.ext.utils.types import CDCData
 
 if TYPE_CHECKING:
-    from telegram.ext import ExtBot
+    from TeleGenic.ext import ExtBot
 
 
-class InvalidCallbackData(TelegramError):
+class InvalidCallbackData(TeleGenicError):
     """
     Raised when the received callback data has been tempered with or deleted from cache.
 

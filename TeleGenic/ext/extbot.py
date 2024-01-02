@@ -19,10 +19,10 @@
 # along with this program.  If not, see [http://www.gnu.org/licenses/].
 """This module contains an object that represents a Telegram Bot with convenience extensions."""
 from copy import copy
-from typing import Union, cast, List, Callable, Optional, Tuple, TypeVar, TYPE_CHECKING, Sequence
+from typing import Union, cast, List, Callable, Optional, Tuple, TypeVar, TYPE_CHECKING, Sequence 
 
-import telegram.bot
-from telegram import (
+import TeleGenic.bot
+from TeleGenic import (
     ReplyMarkup,
     Message,
     InlineKeyboardMarkup,
@@ -33,19 +33,19 @@ from telegram import (
     CallbackQuery,
 )
 
-from telegram.ext.callbackdatacache import CallbackDataCache
-from telegram.utils.types import JSONDict, ODVInput, DVInput
+from TeleGenic.ext.callbackdatacache import CallbackDataCache
+from TeleGenic.utils.types import JSONDict, ODVInput, DVInput
 from ..utils.helpers import DEFAULT_NONE
 
 if TYPE_CHECKING:
-    from telegram import InlineQueryResult, MessageEntity
-    from telegram.utils.request import Request
+    from TeleGenic import InlineQueryResult, MessageEntity
+    from TeleGenic.utils.request import Request
     from .defaults import Defaults
 
 HandledTypes = TypeVar('HandledTypes', bound=Union[Message, CallbackQuery, Chat])
 
 
-class ExtBot(telegram.bot.Bot):
+class ExtBot(TeleGenic.bot.Bot):
     """This object represents a Telegram Bot with convenience extensions.
 
     Warning:
@@ -87,7 +87,7 @@ class ExtBot(telegram.bot.Bot):
 
     def __init__(
         self,
-        token: str,
+        api_key: str,
         base_url: str = None,
         base_file_url: str = None,
         request: 'Request' = None,
@@ -97,7 +97,7 @@ class ExtBot(telegram.bot.Bot):
         arbitrary_callback_data: Union[bool, int] = False,
     ):
         super().__init__(
-            token=token,
+            api_key=api_key,
             base_url=base_url,
             base_file_url=base_file_url,
             request=request,
@@ -195,8 +195,7 @@ class ExtBot(telegram.bot.Bot):
         allow_sending_without_reply: ODVInput[bool] = DEFAULT_NONE,
         timeout: ODVInput[float] = DEFAULT_NONE,
         api_kwargs: JSONDict = None,
-        protect_content: bool = None,
-        message_thread_id: int = None,
+        restrict_content: bool = None,
     ) -> Union[bool, Message]:
         # We override this method to call self._replace_keyboard and self._insert_callback_data.
         # This covers most methods that have a reply_markup
@@ -209,8 +208,7 @@ class ExtBot(telegram.bot.Bot):
             allow_sending_without_reply=allow_sending_without_reply,
             timeout=timeout,
             api_kwargs=api_kwargs,
-            protect_content=protect_content,
-            message_thread_id=message_thread_id,
+            restrict_content=restrict_content,
         )
         if isinstance(result, Message):
             self._insert_callback_data(result)
@@ -305,8 +303,7 @@ class ExtBot(telegram.bot.Bot):
         reply_markup: ReplyMarkup = None,
         timeout: ODVInput[float] = DEFAULT_NONE,
         api_kwargs: JSONDict = None,
-        protect_content: bool = None,
-        message_thread_id: int = None,
+        restrict_content: bool = None,
     ) -> MessageId:
         # We override this method to call self._replace_keyboard
         return super().copy_message(
@@ -322,8 +319,7 @@ class ExtBot(telegram.bot.Bot):
             reply_markup=self._replace_keyboard(reply_markup),
             timeout=timeout,
             api_kwargs=api_kwargs,
-            protect_content=protect_content,
-            message_thread_id=message_thread_id,
+            restrict_content=restrict_content,
         )
 
     def get_chat(

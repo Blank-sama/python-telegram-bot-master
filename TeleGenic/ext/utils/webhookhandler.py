@@ -29,13 +29,13 @@ from tornado import httputil
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 
-from telegram import Update
-from telegram.ext import ExtBot
-from telegram.utils.deprecate import set_new_attribute_deprecated
-from telegram.utils.types import JSONDict
+from TeleGenic import Update
+from TeleGenic.ext import ExtBot
+from TeleGenic.utils.deprecate import set_new_attribute_deprecated
+from TeleGenic.utils.types import JSONDict
 
 if TYPE_CHECKING:
-    from telegram import Bot
+    from TeleGenic import Bot
 
 try:
     import ujson as json

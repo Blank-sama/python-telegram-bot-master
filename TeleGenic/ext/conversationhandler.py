@@ -26,8 +26,8 @@ import datetime
 from threading import Lock
 from typing import TYPE_CHECKING, Dict, List, NoReturn, Optional, Union, Tuple, cast, ClassVar
 
-from telegram import Update
-from telegram.ext import (
+from TeleGenic import Update
+from TeleGenic.ext import (
     BasePersistence,
     CallbackContext,
     CallbackQueryHandler,
@@ -36,12 +36,12 @@ from telegram.ext import (
     Handler,
     InlineQueryHandler,
 )
-from telegram.ext.utils.promise import Promise
-from telegram.ext.utils.types import ConversationDict
-from telegram.ext.utils.types import CCT
+from TeleGenic.ext.utils.promise import Promise
+from TeleGenic.ext.utils.types import ConversationDict
+from TeleGenic.ext.utils.types import CCT
 
 if TYPE_CHECKING:
-    from telegram.ext import Dispatcher, Job
+    from TeleGenic.ext import Dispatcher, Job
 CheckUpdateType = Optional[Tuple[Tuple[int, ...], Handler, object]]
 
 
@@ -228,9 +228,9 @@ class ConversationHandler(Handler[Update, CCT]):
         name: str = None,
         persistent: bool = False,
         map_to_parent: Dict[object, object] = None,
-        run_async: bool = False,
+        block: bool = False,
     ):
-        self.run_async = run_async
+        self.block = block
 
         self._entry_points = entry_points
         self._states = states
@@ -310,9 +310,9 @@ class ConversationHandler(Handler[Update, CCT]):
                     )
                     break
 
-        if self.run_async:
+        if self.block:
             for handler in all_handlers:
-                handler.run_async = True
+                handler.block = True
 
     @property
     def entry_points(self) -> List[Handler]:

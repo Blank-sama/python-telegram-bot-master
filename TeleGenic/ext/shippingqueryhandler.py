@@ -19,7 +19,7 @@
 """This module contains the ShippingQueryHandler class."""
 
 
-from telegram import Update
+from TeleGenic import Update
 from .handler import Handler
 from .utils.types import CCT
 

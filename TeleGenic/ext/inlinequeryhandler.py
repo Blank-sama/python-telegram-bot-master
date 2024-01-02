@@ -31,14 +31,14 @@ from typing import (
     List,
 )
 
-from telegram import Update
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic import Update
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
 
 from .handler import Handler
 from .utils.types import CCT
 
 if TYPE_CHECKING:
-    from telegram.ext import Dispatcher
+    from TeleGenic.ext import Dispatcher
 
 RT = TypeVar('RT')
 
@@ -143,7 +143,7 @@ class InlineQueryHandler(Handler[Update, CCT]):
         pass_groupdict: bool = False,
         pass_user_data: bool = False,
         pass_chat_data: bool = False,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
         chat_types: List[str] = None,
     ):
         super().__init__(
@@ -152,7 +152,7 @@ class InlineQueryHandler(Handler[Update, CCT]):
             pass_job_queue=pass_job_queue,
             pass_user_data=pass_user_data,
             pass_chat_data=pass_chat_data,
-            run_async=run_async,
+            block=block,
         )
 
         if isinstance(pattern, str):

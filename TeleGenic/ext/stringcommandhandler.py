@@ -20,13 +20,13 @@
 
 from typing import TYPE_CHECKING, Callable, Dict, List, Optional, TypeVar, Union
 
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
 
 from .handler import Handler
 from .utils.types import CCT
 
 if TYPE_CHECKING:
-    from telegram.ext import Dispatcher
+    from TeleGenic.ext import Dispatcher
 
 RT = TypeVar('RT')
 
@@ -95,13 +95,13 @@ class StringCommandHandler(Handler[str, CCT]):
         pass_args: bool = False,
         pass_update_queue: bool = False,
         pass_job_queue: bool = False,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
     ):
         super().__init__(
             callback,
             pass_update_queue=pass_update_queue,
             pass_job_queue=pass_job_queue,
-            run_async=run_async,
+            block=block,
         )
         self.command = command
         self.pass_args = pass_args

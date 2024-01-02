@@ -29,13 +29,13 @@ from apscheduler.triggers.combining import OrTrigger
 from apscheduler.triggers.cron import CronTrigger
 from apscheduler.job import Job as APSJob
 
-from telegram.ext.callbackcontext import CallbackContext
-from telegram.utils.types import JSONDict
-from telegram.utils.deprecate import set_new_attribute_deprecated
+from TeleGenic.ext.callbackcontext import CallbackContext
+from TeleGenic.utils.types import JSONDict
+from TeleGenic.utils.deprecate import set_new_attribute_deprecated
 
 if TYPE_CHECKING:
-    from telegram import Bot
-    from telegram.ext import Dispatcher
+    from TeleGenic import Bot
+    from TeleGenic.ext import Dispatcher
     import apscheduler.job  # noqa: F401
 
 

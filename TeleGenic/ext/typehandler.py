@@ -19,7 +19,7 @@
 """This module contains the TypeHandler class."""
 
 from typing import Callable, Type, TypeVar, Union
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
 
 from .handler import Handler
 from .utils.types import CCT
@@ -82,13 +82,13 @@ class TypeHandler(Handler[UT, CCT]):
         strict: bool = False,
         pass_update_queue: bool = False,
         pass_job_queue: bool = False,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
     ):
         super().__init__(
             callback,
             pass_update_queue=pass_update_queue,
             pass_job_queue=pass_job_queue,
-            run_async=run_async,
+            block=block,
         )
         self.type = type  # pylint: disable=E0237
         self.strict = strict  # pylint: disable=E0237

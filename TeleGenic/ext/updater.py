@@ -39,17 +39,17 @@ from typing import (
     overload,
 )
 
-from telegram import Bot, TelegramError
-from telegram.error import InvalidToken, RetryAfter, TimedOut, Unauthorized
-from telegram.ext import Dispatcher, JobQueue, ContextTypes, ExtBot
-from telegram.utils.deprecate import TelegramDeprecationWarning, set_new_attribute_deprecated
-from telegram.utils.helpers import get_signal_name, DEFAULT_FALSE, DefaultValue
-from telegram.utils.request import Request
-from telegram.ext.utils.types import CCT, UD, CD, BD
-from telegram.ext.utils.webhookhandler import WebhookAppClass, WebhookServer
+from TeleGenic import Bot, TeleGenicError
+from TeleGenic.error import InvalidToken, RetryAfter, TimedOut, Unauthorized
+from TeleGenic.ext import Dispatcher, JobQueue, ContextTypes, ExtBot
+from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning, set_new_attribute_deprecated
+from TeleGenic.utils.helpers import get_signal_name, DEFAULT_FALSE, DefaultValue
+from TeleGenic.utils.request import Request
+from TeleGenic.ext.utils.types import CCT, UD, CD, BD
+from TeleGenic.ext.utils.webhookhandler import WebhookAppClass, WebhookServer
 
 if TYPE_CHECKING:
-    from telegram.ext import BasePersistence, Defaults, CallbackContext
+    from TeleGenic.ext import BasePersistence, Defaults, CallbackContext
 
 
 class Updater(Generic[CCT, UD, CD, BD]):
@@ -155,7 +155,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
     @overload
     def __init__(
         self: 'Updater[CallbackContext, dict, dict, dict]',
-        token: str = None,
+        api_key: str = None,
         base_url: str = None,
         workers: int = 4,
         bot: Bot = None,
@@ -174,7 +174,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
     @overload
     def __init__(
         self: 'Updater[CCT, UD, CD, BD]',
-        token: str = None,
+        api_key: str = None,
         base_url: str = None,
         workers: int = 4,
         bot: Bot = None,
@@ -201,7 +201,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
 
     def __init__(  # type: ignore[no-untyped-def,misc]
         self,
-        token: str = None,
+        api_key: str = None,
         base_url: str = None,
         workers: int = 4,
         bot: Bot = None,
@@ -222,7 +222,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
             warnings.warn(
                 'Passing defaults to an Updater has no effect when a Bot is passed '
                 'as well. Pass them to the Bot instead.',
-                TelegramDeprecationWarning,
+                TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
         if arbitrary_callback_data is not DEFAULT_FALSE and bot:
@@ -233,9 +233,9 @@ class Updater(Generic[CCT, UD, CD, BD]):
             )
 
         if dispatcher is None:
-            if (token is None) and (bot is None):
+            if (api_key is None) and (bot is None):
                 raise ValueError('`token` or `bot` must be passed')
-            if (token is not None) and (bot is not None):
+            if (api_key is not None) and (bot is not None):
                 raise ValueError('`token` and `bot` are mutually exclusive')
             if (private_key is not None) and (bot is not None):
                 raise ValueError('`bot` and `private_key` are mutually exclusive')
@@ -277,7 +277,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
                     request_kwargs['con_pool_size'] = con_pool_size
                 self._request = Request(**request_kwargs)
                 self.bot = ExtBot(
-                    token,  # type: ignore[arg-type]
+                    api_key,  # type: ignore[arg-type]
                     base_url,
                     base_file_url=base_file_url,
                     request=self._request,
@@ -405,7 +405,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
             warnings.warn(
                 'The argument `clean` of `start_polling` is deprecated. Please use '
                 '`drop_pending_updates` instead.',
-                category=TelegramDeprecationWarning,
+                category=TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
 
@@ -524,7 +524,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
             warnings.warn(
                 'The argument `clean` of `start_webhook` is deprecated. Please use '
                 '`drop_pending_updates` instead.',
-                category=TelegramDeprecationWarning,
+                category=TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
 
@@ -532,7 +532,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
             warnings.warn(
                 'The argument `force_event_loop` of `start_webhook` is deprecated and no longer '
                 'has any effect.',
-                category=TelegramDeprecationWarning,
+                category=TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
 
@@ -660,7 +660,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
             except InvalidToken as pex:
                 self.logger.error('Invalid token; aborting')
                 raise pex
-            except TelegramError as telegram_exc:
+            except TeleGenicError as telegram_exc:
                 self.logger.error('Error while %s: %s', description, telegram_exc)
                 onerr_cb(telegram_exc)
                 cur_interval = self._increase_poll_interval(cur_interval)
@@ -717,7 +717,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
                 ssl_ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
                 ssl_ctx.load_cert_chain(cert, key)
             except ssl.SSLError as exc:
-                raise TelegramError('Invalid SSL Certificate') from exc
+                raise TeleGenicError('Invalid SSL Certificate') from exc
         else:
             ssl_ctx = None
 

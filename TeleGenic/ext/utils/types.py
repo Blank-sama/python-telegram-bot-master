@@ -23,7 +23,7 @@
 from typing import TypeVar, TYPE_CHECKING, Tuple, List, Dict, Any, Optional
 
 if TYPE_CHECKING:
-    from telegram.ext import CallbackContext  # noqa: F401
+    from TeleGenic.ext import CallbackContext  # noqa: F401
 
 
 ConversationDict = Dict[Tuple[int, ...], Optional[object]]

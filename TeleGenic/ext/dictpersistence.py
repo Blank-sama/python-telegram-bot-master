@@ -21,13 +21,13 @@
 from typing import DefaultDict, Dict, Optional, Tuple, cast
 from collections import defaultdict
 
-from telegram.utils.helpers import (
+from TeleGenic.utils.helpers import (
     decode_conversations_from_json,
     decode_user_chat_data_from_json,
     encode_conversations_to_json,
 )
-from telegram.ext import BasePersistence
-from telegram.ext.utils.types import ConversationDict, CDCData
+from TeleGenic.ext import BasePersistence
+from TeleGenic.ext.utils.types import ConversationDict, CDCData
 
 try:
     import ujson as json

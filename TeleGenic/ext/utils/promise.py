@@ -22,8 +22,8 @@ import logging
 from threading import Event
 from typing import Callable, List, Optional, Tuple, TypeVar, Union
 
-from telegram.utils.deprecate import set_new_attribute_deprecated
-from telegram.utils.types import JSONDict
+from TeleGenic.utils.deprecate import set_new_attribute_deprecated
+from TeleGenic.utils.types import JSONDict
 
 RT = TypeVar('RT')
 

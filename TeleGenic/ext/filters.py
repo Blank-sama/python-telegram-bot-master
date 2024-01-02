@@ -39,7 +39,7 @@ from typing import (
     NoReturn,
 )
 
-from telegram import Chat, Message, MessageEntity, Update, User
+from TeleGenic import Chat, Message, MessageEntity, Update, User
 
 __all__ = [
     'Filters',
@@ -51,8 +51,8 @@ __all__ = [
     'XORFilter',
 ]
 
-from telegram.utils.deprecate import TelegramDeprecationWarning, set_new_attribute_deprecated
-from telegram.utils.types import SLT
+from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning, set_new_attribute_deprecated
+from TeleGenic.utils.types import SLT
 
 DataDict = Dict[str, list]
 
@@ -1488,7 +1488,7 @@ officedocument.wordprocessingml.document")``.
         def filter(self, message: Message) -> bool:
             warnings.warn(
                 'Filters.private is deprecated. Use Filters.chat_type.private instead.',
-                TelegramDeprecationWarning,
+                TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
             return message.chat.type == Chat.PRIVATE
@@ -1509,7 +1509,7 @@ officedocument.wordprocessingml.document")``.
         def filter(self, message: Message) -> bool:
             warnings.warn(
                 'Filters.group is deprecated. Use Filters.chat_type.groups instead.',
-                TelegramDeprecationWarning,
+                TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
             return message.chat.type in [Chat.GROUP, Chat.SUPERGROUP]

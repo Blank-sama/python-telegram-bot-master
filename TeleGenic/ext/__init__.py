@@ -25,7 +25,7 @@ from .dictpersistence import DictPersistence
 from .handler import Handler
 from .callbackcontext import CallbackContext
 from .contexttypes import ContextTypes
-from .dispatcher import Dispatcher, DispatcherHandlerStop, run_async
+from .dispatcher import Dispatcher, DispatcherHandlerStop, block
 
 from .jobqueue import JobQueue, Job
 from .updater import Updater
@@ -90,5 +90,5 @@ __all__ = (
     'TypeHandler',
     'UpdateFilter',
     'Updater',
-    'run_async',
+    'block',
 )

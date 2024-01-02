@@ -23,12 +23,12 @@ from abc import ABC, abstractmethod
 from copy import copy
 from typing import Dict, Optional, Tuple, cast, ClassVar, Generic, DefaultDict
 
-from telegram.utils.deprecate import set_new_attribute_deprecated
+from TeleGenic.utils.deprecate import set_new_attribute_deprecated
 
-from telegram import Bot
-import telegram.ext.extbot
+from TeleGenic import Bot
+import TeleGenic.ext.extbot
 
-from telegram.ext.utils.types import UD, CD, BD, ConversationDict, CDCData
+from TeleGenic.ext.utils.types import UD, CD, BD, ConversationDict, CDCData
 
 
 class BasePersistence(Generic[UD, CD, BD], ABC):
@@ -200,7 +200,7 @@ class BasePersistence(Generic[UD, CD, BD], ABC):
         Args:
             bot (:class:`telegram.Bot`): The bot.
         """
-        if self.store_callback_data and not isinstance(bot, telegram.ext.extbot.ExtBot):
+        if self.store_callback_data and not isinstance(bot, TeleGenic.ext.extbot.ExtBot):
             raise TypeError('store_callback_data can only be used with telegram.ext.ExtBot.')
 
         self.bot = bot

@@ -29,7 +29,7 @@ from typing import (
     DefaultDict,
 )
 
-from telegram.ext import BasePersistence
+from TeleGenic.ext import BasePersistence
 from .utils.types import UD, CD, BD, ConversationDict, CDCData
 from .contexttypes import ContextTypes
 

@@ -22,9 +22,9 @@ from typing import NoReturn, Optional, Dict, Any
 
 import pytz
 
-from telegram.utils.deprecate import set_new_attribute_deprecated
-from telegram.utils.helpers import DEFAULT_NONE
-from telegram.utils.types import ODVInput
+from TeleGenic.utils.deprecate import set_new_attribute_deprecated
+from TeleGenic.utils.helpers import DEFAULT_NONE
+from TeleGenic.utils.types import ODVInput
 
 
 class Defaults:
@@ -61,7 +61,7 @@ class Defaults:
         '_timeout',
         '_tzinfo',
         '_disable_web_page_preview',
-        '_run_async',
+        '_block',
         '_quote',
         '_disable_notification',
         '_allow_sending_without_reply',
@@ -80,7 +80,7 @@ class Defaults:
         timeout: ODVInput[float] = DEFAULT_NONE,
         quote: bool = None,
         tzinfo: pytz.BaseTzInfo = pytz.utc,
-        run_async: bool = False,
+        block: bool = False,
         allow_sending_without_reply: bool = None,
     ):
         self._parse_mode = parse_mode
@@ -90,7 +90,7 @@ class Defaults:
         self._timeout = timeout
         self._quote = quote
         self._tzinfo = tzinfo
-        self._run_async = run_async
+        self._block = block
 
         # Gather all defaults that actually have a default value
         self._api_defaults = {}
@@ -230,15 +230,15 @@ class Defaults:
         )
 
     @property
-    def run_async(self) -> bool:
+    def block(self) -> bool:
         """:obj:`bool`: Optional. Default setting for the ``run_async`` parameter of
         handlers and error handlers registered through :meth:`Dispatcher.add_handler` and
         :meth:`Dispatcher.add_error_handler`.
         """
-        return self._run_async
+        return self._block
 
-    @run_async.setter
-    def run_async(self, value: object) -> NoReturn:
+    @block.setter
+    def block(self, value: object) -> NoReturn:
         raise AttributeError(
             "You can not assign a new value to defaults after because it would "
             "not have any effect."
@@ -254,7 +254,7 @@ class Defaults:
                 self._timeout,
                 self._quote,
                 self._tzinfo,
-                self._run_async,
+                self._block,
             )
         )
 

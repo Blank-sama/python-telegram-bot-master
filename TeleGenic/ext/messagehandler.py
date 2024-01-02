@@ -21,16 +21,16 @@
 import warnings
 from typing import TYPE_CHECKING, Callable, Dict, Optional, TypeVar, Union
 
-from telegram import Update
-from telegram.ext import BaseFilter, Filters
-from telegram.utils.deprecate import TelegramDeprecationWarning
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic import Update
+from TeleGenic.ext import BaseFilter, Filters
+from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
 
 from .handler import Handler
 from .utils.types import CCT
 
 if TYPE_CHECKING:
-    from telegram.ext import Dispatcher
+    from TeleGenic.ext import Dispatcher
 
 RT = TypeVar('RT')
 
@@ -135,7 +135,7 @@ class MessageHandler(Handler[Update, CCT]):
         message_updates: bool = None,
         channel_post_updates: bool = None,
         edited_updates: bool = None,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
     ):
 
         super().__init__(
@@ -144,7 +144,7 @@ class MessageHandler(Handler[Update, CCT]):
             pass_job_queue=pass_job_queue,
             pass_user_data=pass_user_data,
             pass_chat_data=pass_chat_data,
-            run_async=run_async,
+            block=block,
         )
         if message_updates is False and channel_post_updates is False and edited_updates is False:
             raise ValueError(
@@ -159,7 +159,7 @@ class MessageHandler(Handler[Update, CCT]):
                 'message_updates is deprecated. See '
                 'https://github.com/python-telegram-bot/python-telegram-bot/wiki/Transition'
                 '-guide-to-Version-12.0 for more info',
-                TelegramDeprecationWarning,
+                TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
             if message_updates is False:
@@ -171,7 +171,7 @@ class MessageHandler(Handler[Update, CCT]):
                 'https://github.com/python-telegram-bot/python-telegram-bot/wiki/Transition'
                 '-guide-to-Version-12.0 '
                 'for more info',
-                TelegramDeprecationWarning,
+                TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
             if channel_post_updates is False:
@@ -182,7 +182,7 @@ class MessageHandler(Handler[Update, CCT]):
                 'edited_updates is deprecated. See '
                 'https://github.com/python-telegram-bot/python-telegram-bot/wiki/Transition'
                 '-guide-to-Version-12.0 for more info',
-                TelegramDeprecationWarning,
+                TeleGenicDeprecationWarning,
                 stacklevel=2,
             )
             if edited_updates is False:

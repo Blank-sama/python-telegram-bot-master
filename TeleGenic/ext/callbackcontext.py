@@ -33,13 +33,13 @@ from typing import (
     TypeVar,
 )
 
-from telegram import Update, CallbackQuery
-from telegram.ext import ExtBot
-from telegram.ext.utils.types import UD, CD, BD
+from TeleGenic import Update, CallbackQuery
+from TeleGenic.ext import ExtBot
+from TeleGenic.ext.utils.types import UD, CD, BD
 
 if TYPE_CHECKING:
-    from telegram import Bot
-    from telegram.ext import Dispatcher, Job, JobQueue
+    from TeleGenic import Bot
+    from TeleGenic.ext import Dispatcher, Job, JobQueue
 
 CC = TypeVar('CC', bound='CallbackContext')
 

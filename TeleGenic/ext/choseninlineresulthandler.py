@@ -20,16 +20,16 @@
 import re
 from typing import Optional, TypeVar, Union, Callable, TYPE_CHECKING, Pattern, Match, cast
 
-from telegram import Update
+from TeleGenic import Update
 
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
 from .handler import Handler
 from .utils.types import CCT
 
 RT = TypeVar('RT')
 
 if TYPE_CHECKING:
-    from telegram.ext import CallbackContext, Dispatcher
+    from TeleGenic.ext import CallbackContext, Dispatcher
 
 
 class ChosenInlineResultHandler(Handler[Update, CCT]):
@@ -110,7 +110,7 @@ class ChosenInlineResultHandler(Handler[Update, CCT]):
         pass_job_queue: bool = False,
         pass_user_data: bool = False,
         pass_chat_data: bool = False,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
         pattern: Union[str, Pattern] = None,
     ):
         super().__init__(
@@ -119,7 +119,7 @@ class ChosenInlineResultHandler(Handler[Update, CCT]):
             pass_job_queue=pass_job_queue,
             pass_user_data=pass_user_data,
             pass_chat_data=pass_chat_data,
-            run_async=run_async,
+            block=block,
         )
 
         if isinstance(pattern, str):

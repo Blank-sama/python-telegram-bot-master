@@ -42,27 +42,27 @@ from typing import (
 )
 from uuid import uuid4
 
-from telegram import TelegramError, Update
-from telegram.ext import BasePersistence, ContextTypes
-from telegram.ext.callbackcontext import CallbackContext
-from telegram.ext.handler import Handler
-import telegram.ext.extbot
-from telegram.ext.callbackdatacache import CallbackDataCache
-from telegram.utils.deprecate import TelegramDeprecationWarning, set_new_attribute_deprecated
-from telegram.ext.utils.promise import Promise
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
-from telegram.ext.utils.types import CCT, UD, CD, BD
+from TeleGenic import TeleGenicError, Update
+from TeleGenic.ext import BasePersistence, ContextTypes
+from TeleGenic.ext.callbackcontext import CallbackContext
+from TeleGenic.ext.handler import Handler
+import TeleGenic.ext.extbot
+from TeleGenic.ext.callbackdatacache import CallbackDataCache
+from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning, set_new_attribute_deprecated
+from TeleGenic.ext.utils.promise import Promise
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic.ext.utils.types import CCT, UD, CD, BD
 
 if TYPE_CHECKING:
-    from telegram import Bot
-    from telegram.ext import JobQueue
+    from TeleGenic import Bot
+    from TeleGenic.ext import JobQueue
 
 DEFAULT_GROUP: int = 0
 
 UT = TypeVar('UT')
 
 
-def run_async(
+def block(
     func: Callable[[Update, CallbackContext], object]
 ) -> Callable[[Update, CallbackContext], object]:
     """
@@ -86,10 +86,10 @@ def run_async(
         warnings.warn(
             'The @run_async decorator is deprecated. Use the `run_async` parameter of '
             'your Handler or `Dispatcher.run_async` instead.',
-            TelegramDeprecationWarning,
+            TeleGenicDeprecationWarning,
             stacklevel=2,
         )
-        return Dispatcher.get_instance()._run_async(  # pylint: disable=W0212
+        return Dispatcher.get_instance()._block(  # pylint: disable=W0212
             func, *args, update=None, error_handling=False, **kwargs
         )
 
@@ -244,7 +244,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
                 'Old Handler API is deprecated - see '
                 'https://github.com/python-telegram-bot/python-telegram-bot/wiki/Transition'
                 '-guide-to-Version-12.0 for details',
-                TelegramDeprecationWarning,
+                TeleGenicDeprecationWarning,
                 stacklevel=3,
             )
 
@@ -278,7 +278,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
                         f"bot_data must be of type {self.context_types.bot_data.__name__}"
                     )
             if self.persistence.store_callback_data:
-                self.bot = cast(telegram.ext.extbot.ExtBot, self.bot)
+                self.bot = cast(TeleGenic.ext.extbot.ExtBot, self.bot)
                 persistent_data = self.persistence.get_callback_data()
                 if persistent_data is not None:
                     if not isinstance(persistent_data, tuple) and len(persistent_data) != 2:
@@ -401,7 +401,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
             except Exception:
                 self.logger.exception('An uncaught error was raised while handling the error.')
 
-    def run_async(
+    def block(
         self, func: Callable[..., object], *args: object, update: object = None, **kwargs: object
     ) -> Promise:
         """
@@ -427,9 +427,9 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
             Promise
 
         """
-        return self._run_async(func, *args, update=update, error_handling=True, **kwargs)
+        return self._block(func, *args, update=update, error_handling=True, **kwargs)
 
-    def _run_async(
+    def _block(
         self,
         func: Callable[..., object],
         *args: object,
@@ -461,7 +461,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
         if self.__exception_event.is_set():
             msg = 'reusing dispatcher after exception event is forbidden'
             self.logger.error(msg)
-            raise TelegramError(msg)
+            raise TeleGenicError(msg)
 
         self._init_async_threads(str(uuid4()), self.workers)
         self.running = True
@@ -533,7 +533,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
 
         """
         # An error happened while polling
-        if isinstance(update, TelegramError):
+        if isinstance(update, TeleGenicError):
             try:
                 self.dispatch_error(None, update)
             except Exception:
@@ -553,7 +553,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
                             context = self.context_types.context.from_update(update, self)
                             context.refresh_data()
                         handled = True
-                        sync_modes.append(handler.run_async)
+                        sync_modes.append(handler.block)
                         handler.handle_update(update, self, check, context)
                         break
 
@@ -579,7 +579,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
         if handled:
             # Respect default settings
             if all(mode is DEFAULT_FALSE for mode in sync_modes) and self.bot.defaults:
-                handled_only_async = self.bot.defaults.run_async
+                handled_only_async = self.bot.defaults.block
             # If update was only handled by async handlers, we don't need to update here
             if not handled_only_async:
                 self.update_persistence(update=update)
@@ -682,7 +682,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
                     user_ids = []
 
             if self.persistence.store_callback_data:
-                self.bot = cast(telegram.ext.extbot.ExtBot, self.bot)
+                self.bot = cast(TeleGenic.ext.extbot.ExtBot, self.bot)
                 try:
                     self.persistence.update_callback_data(
                         self.bot.callback_data_cache.persistence_data
@@ -742,7 +742,7 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
     def add_error_handler(
         self,
         callback: Callable[[object, CCT], None],
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,  # pylint: disable=W0621
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,  # pylint: disable=W0621
     ) -> None:
         """Registers an error handler in the Dispatcher. This handler will receive every error
         which happens in your bot.
@@ -772,10 +772,10 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
             self.logger.debug('The callback is already registered as an error handler. Ignoring.')
             return
 
-        if run_async is DEFAULT_FALSE and self.bot.defaults and self.bot.defaults.run_async:
-            run_async = True
+        if block is DEFAULT_FALSE and self.bot.defaults and self.bot.defaults.block:
+            block = True
 
-        self.error_handlers[callback] = run_async
+        self.error_handlers[callback] = block
 
     def remove_error_handler(self, callback: Callable[[object, CCT], None]) -> None:
         """Removes an error handler.
@@ -802,18 +802,18 @@ class Dispatcher(Generic[CCT, UD, CD, BD]):
         async_kwargs = None if not promise else promise.kwargs
 
         if self.error_handlers:
-            for callback, run_async in self.error_handlers.items():  # pylint: disable=W0621
+            for callback, block in self.error_handlers.items():  # pylint: disable=W0621
                 if self.use_context:
                     context = self.context_types.context.from_error(
                         update, error, self, async_args=async_args, async_kwargs=async_kwargs
                     )
-                    if run_async:
-                        self.run_async(callback, update, context, update=update)
+                    if block:
+                        self.block(callback, update, context, update=update)
                     else:
                         callback(update, context)
                 else:
-                    if run_async:
-                        self.run_async(callback, self.bot, update, error, update=update)
+                    if block:
+                        self.block(callback, self.bot, update, error, update=update)
                     else:
                         callback(self.bot, update, error)
 

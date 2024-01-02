@@ -27,11 +27,11 @@ import time
 import warnings
 from typing import TYPE_CHECKING, Callable, List, NoReturn
 
-from telegram.ext.utils.promise import Promise
-from telegram.utils.deprecate import TelegramDeprecationWarning
+from TeleGenic.ext.utils.promise import Promise
+from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning
 
 if TYPE_CHECKING:
-    from telegram import Bot
+    from TeleGenic import Bot
 
 # We need to count < 1s intervals, so the most accurate timer is needed
 curtime = time.perf_counter
@@ -95,7 +95,7 @@ class DelayQueue(threading.Thread):
             'DelayQueue in its current form is deprecated and will be reinvented in a future '
             'release. See https://github.com/python-telegram-bot/python-telegram-bot/issues/2139 '
             'for a list of known bugs.',
-            category=TelegramDeprecationWarning,
+            category=TeleGenicDeprecationWarning,
         )
 
         self._queue = queue if queue is not None else q.Queue()
@@ -231,7 +231,7 @@ class MessageQueue:
             'MessageQueue in its current form is deprecated and will be reinvented in a future '
             'release. See https://github.com/python-telegram-bot/python-telegram-bot/issues/2139 '
             'for a list of known bugs.',
-            category=TelegramDeprecationWarning,
+            category=TeleGenicDeprecationWarning,
         )
 
         # create according delay queues, use composition

@@ -21,15 +21,15 @@ from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, Any, Callable, Dict, Optional, TypeVar, Union, Generic
 from sys import version_info as py_ver
 
-from telegram.utils.deprecate import set_new_attribute_deprecated
+from TeleGenic.utils.deprecate import set_new_attribute_deprecated
 
-from telegram import Update
-from telegram.ext.utils.promise import Promise
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
-from telegram.ext.utils.types import CCT
+from TeleGenic import Update
+from TeleGenic.ext.utils.promise import Promise
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic.ext.utils.types import CCT
 
 if TYPE_CHECKING:
-    from telegram.ext import Dispatcher
+    from TeleGenic.ext import Dispatcher
 
 RT = TypeVar('RT')
 UT = TypeVar('UT')
@@ -102,7 +102,7 @@ class Handler(Generic[UT, CCT], ABC):
             'pass_job_queue',
             'pass_user_data',
             'pass_chat_data',
-            'run_async',
+            'block',
         )
     else:
         __slots__ = (
@@ -111,7 +111,7 @@ class Handler(Generic[UT, CCT], ABC):
             'pass_job_queue',
             'pass_user_data',
             'pass_chat_data',
-            'run_async',
+            'block',
             '__dict__',
         )
 
@@ -122,14 +122,14 @@ class Handler(Generic[UT, CCT], ABC):
         pass_job_queue: bool = False,
         pass_user_data: bool = False,
         pass_chat_data: bool = False,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
     ):
         self.callback = callback
         self.pass_update_queue = pass_update_queue
         self.pass_job_queue = pass_job_queue
         self.pass_user_data = pass_user_data
         self.pass_chat_data = pass_chat_data
-        self.run_async = run_async
+        self.block=block
 
     def __setattr__(self, key: str, value: object) -> None:
         # See comment on BaseFilter to know why this was done.
@@ -184,23 +184,23 @@ class Handler(Generic[UT, CCT], ABC):
                 the dispatcher.
 
         """
-        run_async = self.run_async
+        block = self.block
         if (
-            self.run_async is DEFAULT_FALSE
+            self.block is DEFAULT_FALSE
             and dispatcher.bot.defaults
-            and dispatcher.bot.defaults.run_async
+            and dispatcher.bot.defaults.block
         ):
-            run_async = True
+            block = True
 
         if context:
             self.collect_additional_context(context, update, dispatcher, check_result)
-            if run_async:
-                return dispatcher.run_async(self.callback, update, context, update=update)
+            if block:
+                return dispatcher.block(self.callback, update, context, update=update)
             return self.callback(update, context)
 
         optional_args = self.collect_optional_args(dispatcher, update, check_result)
-        if run_async:
-            return dispatcher.run_async(
+        if block:
+            return dispatcher.block(
                 self.callback, dispatcher.bot, update, update=update, **optional_args
             )
         return self.callback(dispatcher.bot, update, **optional_args)  # type: ignore

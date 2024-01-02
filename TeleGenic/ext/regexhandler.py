@@ -22,14 +22,14 @@
 import warnings
 from typing import TYPE_CHECKING, Callable, Dict, Optional, Pattern, TypeVar, Union, Any
 
-from telegram import Update
-from telegram.ext import Filters, MessageHandler
-from telegram.utils.deprecate import TelegramDeprecationWarning
-from telegram.utils.helpers import DefaultValue, DEFAULT_FALSE
-from telegram.ext.utils.types import CCT
+from TeleGenic import Update
+from TeleGenic.ext import Filters, MessageHandler
+from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning
+from TeleGenic.utils.helpers import DefaultValue, DEFAULT_FALSE
+from TeleGenic.ext.utils.types import CCT
 
 if TYPE_CHECKING:
-    from telegram.ext import Dispatcher
+    from TeleGenic.ext import Dispatcher
 
 RT = TypeVar('RT')
 
@@ -125,13 +125,13 @@ class RegexHandler(MessageHandler):
         message_updates: bool = True,
         channel_post_updates: bool = False,
         edited_updates: bool = False,
-        run_async: Union[bool, DefaultValue] = DEFAULT_FALSE,
+        block: Union[bool, DefaultValue] = DEFAULT_FALSE,
     ):
         warnings.warn(
             'RegexHandler is deprecated. See '
             'https://github.com/python-telegram-bot/python-telegram-bot/wiki/Transition-guide-to'
             '-Version-12.0 for more info',
-            TelegramDeprecationWarning,
+            TeleGenicDeprecationWarning,
             stacklevel=2,
         )
         super().__init__(
@@ -144,7 +144,7 @@ class RegexHandler(MessageHandler):
             message_updates=message_updates,
             channel_post_updates=channel_post_updates,
             edited_updates=edited_updates,
-            run_async=run_async,
+            block=block,
         )
         self.pass_groups = pass_groups
         self.pass_groupdict = pass_groupdict

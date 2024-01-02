@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
-# A library that provides a Python interface to the TeleGenic Bot API
+# A library that provides a Python interface to the Telegram Bot API
 # Copyright (C) 2015-2022
-# Leandro Toledo de Souza <devs@python-TeleGenic-bot.org>
+# Leandro Toledo de Souza <devs@python-telegram-bot.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser Public License as published by
@@ -180,7 +180,7 @@ class TestDispatcher:
                 self.store_callback_data = False
 
         with pytest.raises(
-            TypeError, match='persistence must be based on TeleGenic.ext.BasePersistence'
+            TypeError, match='persistence must be based on telegram.ext.BasePersistence'
         ):
             Dispatcher(bot, None, persistence=my_per())
 
@@ -548,9 +548,9 @@ class TestDispatcher:
         dp.process_update(update)
         assert passed == ['start1', 'error', err, 'start3']
 
-    def test_TeleGenic_error_in_handler(self, dp, bot):
+    def test_telegram_error_in_handler(self, dp, bot):
         passed = []
-        err = TeleGenicError('TeleGenic error')
+        err = TeleGenicError('Telegram error')
 
         def start1(b, u):
             passed.append('start1')
@@ -581,7 +581,7 @@ class TestDispatcher:
             ),
         )
 
-        # If a TeleGenicException was caught, an error handler should be called and no further
+        # If a TelegramException was caught, an error handler should be called and no further
         # handlers from the same group should be called.
         dp.add_handler(CommandHandler('start', start1), 1)
         dp.add_handler(CommandHandler('start', start2), 1)
@@ -664,7 +664,7 @@ class TestDispatcher:
 
     def test_flow_stop_in_error_handler(self, dp, bot):
         passed = []
-        err = TeleGenicError('TeleGenic error')
+        err = TeleGenicError('Telegram error')
 
         def start1(b, u):
             passed.append('start1')
@@ -696,7 +696,7 @@ class TestDispatcher:
             ),
         )
 
-        # If a TeleGenicException was caught, an error handler should be called and no further
+        # If a TelegramException was caught, an error handler should be called and no further
         # handlers from the same group should be called.
         dp.add_handler(CommandHandler('start', start1), 1)
         dp.add_handler(CommandHandler('start', start2), 1)
@@ -949,8 +949,8 @@ class TestDispatcher:
             pass
 
         monkeypatch.setattr(dp, 'update_persistence', update_persistence)
-        monkeypatch.setattr(dp, 'blockc', dummy_callback)
-        dp.bot.defaults = Defaults(block= block)
+        monkeypatch.setattr(dp, 'block', dummy_callback)
+        dp.bot.defaults = Defaults(block=block)
 
         try:
             for group in range(5):
