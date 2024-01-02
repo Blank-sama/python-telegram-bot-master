@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
-# A library that provides a Python interface to the TeleGenic Bot API
+# A library that provides a Python interface to the Telegram Bot API
 # Copyright (C) 2015-2022
-# Leandro Toledo de Souza <devs@python-TeleGenic-bot.org>
+# Leandro Toledo de Souza <devs@python-telegram-bot.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser Public License as published by
@@ -134,7 +134,7 @@ class TestUpdater:
     @pytest.mark.parametrize(
         ('error',),
         argvalues=[(TeleGenicError('Test Error 2'),), (Unauthorized('Test Unauthorized'),)],
-        ids=('TeleGenicError', 'Unauthorized'),
+        ids=('TelegramError', 'Unauthorized'),
     )
     def test_get_updates_normal_err(self, monkeypatch, updater, error):
         def test(*args, **kwargs):
@@ -218,11 +218,11 @@ class TestUpdater:
         q = Queue()
         monkeypatch.setattr(updater.bot, 'set_webhook', lambda *args, **kwargs: True)
         monkeypatch.setattr(updater.bot, 'delete_webhook', lambda *args, **kwargs: True)
-        monkeypatch.setattr('TeleGenic.ext.Dispatcher.process_update', lambda _, u: q.put(u))
+        monkeypatch.setattr('telegram.ext.Dispatcher.process_update', lambda _, u: q.put(u))
 
         ip = '127.0.0.1'
         port = randrange(1024, 49152)  # Select random port
-        updater.start_webhook(ip, port, url_path='TOKEN')
+        updater.start_webhook(ip, port, url_path='api_key')
         sleep(0.2)
         try:
             # Now, we send an update to the server via urlopen
@@ -232,7 +232,7 @@ class TestUpdater:
                     1, None, Chat(1, ''), from_user=User(1, '', False), text='Webhook'
                 ),
             )
-            self._send_webhook_msg(ip, port, update.to_json(), 'TOKEN')
+            self._send_webhook_msg(ip, port, update.to_json(), 'api_key')
             sleep(0.2)
             assert q.get(False) == update
 
@@ -257,18 +257,18 @@ class TestUpdater:
 
     @pytest.mark.parametrize('invalid_data', [True, False])
     def test_webhook_arbitrary_callback_data(self, monkeypatch, updater, invalid_data):
-        """Here we only test one simple setup. TeleGenic.ext.ExtBot.insert_callback_data is tested
+        """Here we only test one simple setup. telegram.ext.ExtBot.insert_callback_data is tested
         extensively in test_bot.py in conjunction with get_updates."""
         updater.bot.arbitrary_callback_data = True
         try:
             q = Queue()
             monkeypatch.setattr(updater.bot, 'set_webhook', lambda *args, **kwargs: True)
             monkeypatch.setattr(updater.bot, 'delete_webhook', lambda *args, **kwargs: True)
-            monkeypatch.setattr('TeleGenic.ext.Dispatcher.process_update', lambda _, u: q.put(u))
+            monkeypatch.setattr('telegram.ext.Dispatcher.process_update', lambda _, u: q.put(u))
 
             ip = '127.0.0.1'
             port = randrange(1024, 49152)  # Select random port
-            updater.start_webhook(ip, port, url_path='TOKEN')
+            updater.start_webhook(ip, port, url_path='api_key')
             sleep(0.2)
             try:
                 # Now, we send an update to the server via urlopen
@@ -285,7 +285,7 @@ class TestUpdater:
                     reply_markup=reply_markup,
                 )
                 update = Update(1, message=message)
-                self._send_webhook_msg(ip, port, update.to_json(), 'TOKEN')
+                self._send_webhook_msg(ip, port, update.to_json(), 'api_key')
                 sleep(0.2)
                 received_update = q.get(False)
                 assert received_update == update
@@ -332,7 +332,7 @@ class TestUpdater:
             updater._start_webhook(
                 ip,
                 port,
-                url_path='TOKEN',
+                url_path='api_key',
                 cert='./tests/test_updater.py',
                 key='./tests/test_updater.py',
                 bootstrap_retries=0,
@@ -348,7 +348,7 @@ class TestUpdater:
         q = Queue()
         monkeypatch.setattr(updater.bot, 'set_webhook', lambda *args, **kwargs: True)
         monkeypatch.setattr(updater.bot, 'delete_webhook', lambda *args, **kwargs: True)
-        monkeypatch.setattr('TeleGenic.ext.Dispatcher.process_update', lambda _, u: q.put(u))
+        monkeypatch.setattr('telegram.ext.Dispatcher.process_update', lambda _, u: q.put(u))
 
         ip = '127.0.0.1'
         port = randrange(1024, 49152)  # Select random port
@@ -365,7 +365,7 @@ class TestUpdater:
         assert q.get(False) == update
         updater.stop()
 
-    def test_webhook_ssl_just_for_TeleGenic(self, monkeypatch, updater):
+    def test_webhook_ssl_just_for_telegram(self, monkeypatch, updater):
         q = Queue()
 
         def set_webhook(**kwargs):
@@ -380,9 +380,9 @@ class TestUpdater:
 
         monkeypatch.setattr(updater.bot, 'set_webhook', set_webhook)
         monkeypatch.setattr(updater.bot, 'delete_webhook', lambda *args, **kwargs: True)
-        monkeypatch.setattr('TeleGenic.ext.Dispatcher.process_update', lambda _, u: q.put(u))
+        monkeypatch.setattr('telegram.ext.Dispatcher.process_update', lambda _, u: q.put(u))
         monkeypatch.setattr(
-            'TeleGenic.ext.utils.webhookhandler.WebhookServer.__init__', webhook_server_init
+            'telegram.ext.utils.webhookhandler.WebhookServer.__init__', webhook_server_init
         )
 
         ip = '127.0.0.1'
@@ -415,7 +415,7 @@ class TestUpdater:
 
         monkeypatch.setattr(updater.bot, 'set_webhook', set_webhook)
         monkeypatch.setattr(updater.bot, 'delete_webhook', lambda *args, **kwargs: True)
-        monkeypatch.setattr('TeleGenic.ext.Dispatcher.process_update', lambda _, u: q.put(u))
+        monkeypatch.setattr('telegram.ext.Dispatcher.process_update', lambda _, u: q.put(u))
 
         ip = '127.0.0.1'
         port = randrange(1024, 49152)  # Select random port
@@ -437,7 +437,7 @@ class TestUpdater:
         updater.stop()
         assert self.test_flag is True
 
-    @pytest.mark.parametrize(('error',), argvalues=[(TeleGenicError(''),)], ids=('TeleGenicError',))
+    @pytest.mark.parametrize(('error',), argvalues=[(TeleGenicError(''),)], ids=('TelegramError',))
     def test_bootstrap_retries_success(self, monkeypatch, updater, error):
         retries = 2
 
@@ -455,7 +455,7 @@ class TestUpdater:
     @pytest.mark.parametrize(
         ('error', 'attempts'),
         argvalues=[(TeleGenicError(''), 2), (Unauthorized(''), 1), (InvalidToken(), 1)],
-        ids=('TeleGenicError', 'Unauthorized', 'InvalidToken'),
+        ids=('TelegramError', 'Unauthorized', 'InvalidToken'),
     )
     def test_bootstrap_retries_error(self, monkeypatch, updater, error, attempts):
         retries = 1

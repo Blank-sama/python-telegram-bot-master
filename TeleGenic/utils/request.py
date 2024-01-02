@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
-# A library that provides a Python interface to the TeleGenic Bot API
+# A library that provides a Python interface to the Telegram Bot API
 # Copyright (C) 2015-2022
-# Leandro Toledo de Souza <devs@python-TeleGenic-bot.org>
+# Leandro Toledo de Souza <devs@python-telegram-bot.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser Public License as published by
@@ -47,12 +47,12 @@ except ImportError:  # pragma: no cover
         from urllib3.util.timeout import Timeout  # type: ignore[no-redef]
 
         warnings.warn(
-            'python-TeleGenic-bot is using upstream urllib3. This is allowed but not '
-            'supported by python-TeleGenic-bot maintainers.'
+            'python-telegram-bot is using upstream urllib3. This is allowed but not '
+            'supported by python-telegram-bot maintainers.'
         )
     except ImportError:
         warnings.warn(
-            "python-TeleGenic-bot wasn't properly installed. Please refer to README.rst on "
+            "python-telegram-bot wasn't properly installed. Please refer to README.rst on "
             "how to properly install."
         )
         raise
@@ -76,7 +76,7 @@ from TeleGenic.utils.deprecate import set_new_attribute_deprecated
 def _render_part(self: RequestField, name: str, value: str) -> str:  # pylint: disable=W0613
     r"""
     Monkey patch urllib3.urllib3.fields.RequestField to make it *not* support RFC2231 compliant
-    Content-Disposition headers since TeleGenic servers don't understand it. Instead just escape
+    Content-Disposition headers since telegram servers don't understand it. Instead just escape
     \\ and " and replace any \n and \r with a space.
     """
     value = value.replace('\\', '\\\\').replace('"', '\\"')
@@ -86,15 +86,15 @@ def _render_part(self: RequestField, name: str, value: str) -> str:  # pylint: d
 
 RequestField._render_part = _render_part  # type: ignore  # pylint: disable=W0212
 
-logging.getLogger('TeleGenic.vendor.ptb_urllib3.urllib3').setLevel(logging.WARNING)
+logging.getLogger('telegram.vendor.ptb_urllib3.urllib3').setLevel(logging.WARNING)
 
-USER_AGENT = 'Python TeleGenic Bot (https://github.com/python-TeleGenic-bot/python-TeleGenic-bot)'
+USER_AGENT = 'Python Telegram Bot (https://github.com/python-telegram-bot/python-telegram-bot)'
 
 
 class Request:
     """
-    Helper class for python-TeleGenic-bot which provides methods to perform POST & GET towards
-    TeleGenic servers.
+    Helper class for python-telegram-bot which provides methods to perform POST & GET towards
+    Telegram servers.
 
     Args:
         con_pool_size (:obj:`int`): Number of connections to keep in the connection pool.
@@ -108,7 +108,7 @@ class Request:
         read_timeout (:obj:`int` | :obj:`float`): The maximum amount of time (in seconds) to wait
             between consecutive read operations for a response from the server. :obj:`None` will
             set an infinite timeout. This value is usually overridden by the various
-            :class:`TeleGenic.Bot` methods. Defaults to ``5.0``.
+            :class:`telegram.Bot` methods. Defaults to ``5.0``.
 
     """
 
@@ -179,7 +179,7 @@ class Request:
             if proxy_url.startswith('socks'):
                 try:
                     # pylint: disable=C0415
-                    from TeleGenic.vendor.ptb_urllib3.urllib3.contrib.socks import SOCKSProxyManager
+                    from telegram.vendor.ptb_urllib3.urllib3.contrib.socks import SOCKSProxyManager
                 except ImportError as exc:
                     raise RuntimeError('PySocks is missing') from exc
                 self._con_pool = SOCKSProxyManager(proxy_url, **kwargs)
@@ -206,7 +206,7 @@ class Request:
 
     @staticmethod
     def _parse(json_data: bytes) -> Union[JSONDict, bool]:
-        """Try and parse the JSON returned from TeleGenic.
+        """Try and parse the JSON returned from Telegram.
 
         Returns:
             dict: A JSON parsed as Python dict with results - on error this dict will be empty.
@@ -244,10 +244,10 @@ class Request:
             bytes: A non-parsed JSON text.
 
         Raises:
-            TeleGenicError
+            TelegramError
 
         """
-        # Make sure to hint TeleGenic servers that we reuse connections by sending
+        # Make sure to hint Telegram servers that we reuse connections by sending
         # "Connection: keep-alive" in the HTTP headers.
         if 'headers' not in kwargs:
             kwargs['headers'] = {}
@@ -283,8 +283,8 @@ class Request:
             raise Conflict(message)
         if resp.status == 413:
             raise NetworkError(
-                'File too large. Check TeleGenic api limits '
-                'https://core.TeleGenic.org/bots/api#senddocument'
+                'File too large. Check telegram api limits '
+                'https://core.telegram.org/bots/api#senddocument'
             )
         if resp.status == 502:
             raise NetworkError('Bad Gateway')

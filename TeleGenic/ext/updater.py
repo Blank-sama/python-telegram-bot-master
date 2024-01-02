@@ -1,23 +1,3 @@
-#!/usr/bin/env python
-#
-# A library that provides a Python interface to the TeleGenic Bot API
-# Copyright (C) 2015-2022
-# Leandro Toledo de Souza <devs@python-TeleGenic-bot.org>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Lesser Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser Public License for more details.
-#
-# You should have received a copy of the GNU Lesser Public License
-# along with this program.  If not, see [http://www.gnu.org/licenses/].
-"""This module contains the class Updater, which tries to make creating TeleGenic bots intuitive."""
-
 import logging
 import ssl
 import warnings
@@ -42,7 +22,7 @@ from typing import (
 from TeleGenic import Bot, TeleGenicError
 from TeleGenic.error import InvalidToken, RetryAfter, TimedOut, Unauthorized
 from TeleGenic.ext import Dispatcher, JobQueue, ContextTypes, ExtBot
-from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning, set_new_attribute_deprecated
+from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning ,  set_new_attribute_deprecated
 from TeleGenic.utils.helpers import get_signal_name, DEFAULT_FALSE, DefaultValue
 from TeleGenic.utils.request import Request
 from TeleGenic.ext.utils.types import CCT, UD, CD, BD
@@ -54,11 +34,11 @@ if TYPE_CHECKING:
 
 class Updater(Generic[CCT, UD, CD, BD]):
     """
-    This class, which employs the :class:`TeleGenic.ext.Dispatcher`, provides a frontend to
-    :class:`TeleGenic.Bot` to the programmer, so they can focus on coding the bot. Its purpose is to
-    receive the updates from TeleGenic and to deliver them to said dispatcher. It also runs in a
+    This class, which employs the :class:`telegram.ext.Dispatcher`, provides a frontend to
+    :class:`telegram.Bot` to the programmer, so they can focus on coding the bot. Its purpose is to
+    receive the updates from Telegram and to deliver them to said dispatcher. It also runs in a
     separate thread, so the user can interact with the bot, for example on the command line. The
-    dispatcher supports handlers for different kinds of data: Updates from TeleGenic, basic text
+    dispatcher supports handlers for different kinds of data: Updates from Telegram, basic text
     commands and even arbitrary types. The updater can be started as a polling service or, for
     production, use a webhook to receive updates. This is achieved using the WebhookServer and
     WebhookHandler classes.
@@ -66,8 +46,8 @@ class Updater(Generic[CCT, UD, CD, BD]):
     Note:
         * You must supply either a :attr:`bot` or a :attr:`token` argument.
         * If you supply a :attr:`bot`, you will need to pass :attr:`arbitrary_callback_data`,
-          and :attr:`defaults` to the bot instead of the :class:`TeleGenic.ext.Updater`. In this
-          case, you'll have to use the class :class:`TeleGenic.ext.ExtBot`.
+          and :attr:`defaults` to the bot instead of the :class:`telegram.ext.Updater`. In this
+          case, you'll have to use the class :class:`telegram.ext.ExtBot`.
 
           .. versionchanged:: 13.6
 
@@ -77,40 +57,40 @@ class Updater(Generic[CCT, UD, CD, BD]):
         base_file_url (:obj:`str`, optional): Base_file_url for the bot.
         workers (:obj:`int`, optional): Amount of threads in the thread pool for functions
             decorated with ``@run_async`` (ignored if `dispatcher` argument is used).
-        bot (:class:`TeleGenic.Bot`, optional): A pre-initialized bot instance (ignored if
+        bot (:class:`telegram.Bot`, optional): A pre-initialized bot instance (ignored if
             `dispatcher` argument is used). If a pre-initialized bot is used, it is the user's
             responsibility to create it using a `Request` instance with a large enough connection
             pool.
-        dispatcher (:class:`TeleGenic.ext.Dispatcher`, optional): A pre-initialized dispatcher
+        dispatcher (:class:`telegram.ext.Dispatcher`, optional): A pre-initialized dispatcher
             instance. If a pre-initialized dispatcher is used, it is the user's responsibility to
             create it with proper arguments.
-        private_key (:obj:`bytes`, optional): Private key for decryption of TeleGenic passport data.
+        private_key (:obj:`bytes`, optional): Private key for decryption of telegram passport data.
         private_key_password (:obj:`bytes`, optional): Password for above private key.
         user_sig_handler (:obj:`function`, optional): Takes ``signum, frame`` as positional
             arguments. This will be called when a signal is received, defaults are (SIGINT,
             SIGTERM, SIGABRT) settable with :attr:`idle`.
         request_kwargs (:obj:`dict`, optional): Keyword args to control the creation of a
-            `TeleGenic.utils.request.Request` object (ignored if `bot` or `dispatcher` argument is
+            `telegram.utils.request.Request` object (ignored if `bot` or `dispatcher` argument is
             used). The request_kwargs are very useful for the advanced users who would like to
             control the default timeouts and/or control the proxy used for http communication.
         use_context (:obj:`bool`, optional): If set to :obj:`True` uses the context based callback
             API (ignored if `dispatcher` argument is used). Defaults to :obj:`True`.
             **New users**: set this to :obj:`True`.
-        persistence (:class:`TeleGenic.ext.BasePersistence`, optional): The persistence class to
+        persistence (:class:`telegram.ext.BasePersistence`, optional): The persistence class to
             store data that should be persistent over restarts (ignored if `dispatcher` argument is
             used).
-        defaults (:class:`TeleGenic.ext.Defaults`, optional): An object containing default values to
+        defaults (:class:`telegram.ext.Defaults`, optional): An object containing default values to
             be used if not set explicitly in the bot methods.
         arbitrary_callback_data (:obj:`bool` | :obj:`int` | :obj:`None`, optional): Whether to
-            allow arbitrary objects as callback data for :class:`TeleGenic.InlineKeyboardButton`.
+            allow arbitrary objects as callback data for :class:`telegram.InlineKeyboardButton`.
             Pass an integer to specify the maximum number of cached objects. For more details,
             please see our wiki. Defaults to :obj:`False`.
 
             .. versionadded:: 13.6
-        context_types (:class:`TeleGenic.ext.ContextTypes`, optional): Pass an instance
-            of :class:`TeleGenic.ext.ContextTypes` to customize the types used in the
+        context_types (:class:`telegram.ext.ContextTypes`, optional): Pass an instance
+            of :class:`telegram.ext.ContextTypes` to customize the types used in the
             ``context`` interface. If not passed, the defaults documented in
-            :class:`TeleGenic.ext.ContextTypes` will be used.
+            :class:`telegram.ext.ContextTypes` will be used.
 
             .. versionadded:: 13.6
 
@@ -119,15 +99,15 @@ class Updater(Generic[CCT, UD, CD, BD]):
 
 
     Attributes:
-        bot (:class:`TeleGenic.Bot`): The bot used with this Updater.
+        bot (:class:`telegram.Bot`): The bot used with this Updater.
         user_sig_handler (:obj:`function`): Optional. Function to be called when a signal is
             received.
         update_queue (:obj:`Queue`): Queue for the updates.
-        job_queue (:class:`TeleGenic.ext.JobQueue`): Jobqueue for the updater.
-        dispatcher (:class:`TeleGenic.ext.Dispatcher`): Dispatcher that handles the updates and
+        job_queue (:class:`telegram.ext.JobQueue`): Jobqueue for the updater.
+        dispatcher (:class:`telegram.ext.Dispatcher`): Dispatcher that handles the updates and
             dispatches them to the handlers.
         running (:obj:`bool`): Indicates if the updater is running.
-        persistence (:class:`TeleGenic.ext.BasePersistence`): Optional. The persistence class to
+        persistence (:class:`telegram.ext.BasePersistence`): Optional. The persistence class to
             store data that should be persistent over restarts.
         use_context (:obj:`bool`): Optional. :obj:`True` if using context based callbacks.
 
@@ -234,9 +214,9 @@ class Updater(Generic[CCT, UD, CD, BD]):
 
         if dispatcher is None:
             if (api_key is None) and (bot is None):
-                raise ValueError('`api_key` or `bot` must be passed')
+                raise ValueError('`token` or `bot` must be passed')
             if (api_key is not None) and (bot is not None):
-                raise ValueError('`api_key` and `bot` are mutually exclusive')
+                raise ValueError('`token` and `bot` are mutually exclusive')
             if (private_key is not None) and (bot is not None):
                 raise ValueError('`bot` and `private_key` are mutually exclusive')
         else:
@@ -277,8 +257,8 @@ class Updater(Generic[CCT, UD, CD, BD]):
                     request_kwargs['con_pool_size'] = con_pool_size
                 self._request = Request(**request_kwargs)
                 self.bot = ExtBot(
-                    api_key,  # type: ignore[arg-type]
-                    base_url,
+                    api_key=api_key,  # type: ignore[arg-type]
+                    base_url =base_url,
                     base_file_url=base_file_url,
                     request=self._request,
                     private_key=private_key,
@@ -367,14 +347,14 @@ class Updater(Generic[CCT, UD, CD, BD]):
         allowed_updates: List[str] = None,
         drop_pending_updates: bool = None,
     ) -> Optional[Queue]:
-        """Starts polling updates from TeleGenic.
+        """Starts polling updates from Telegram.
 
         Args:
             poll_interval (:obj:`float`, optional): Time to wait between polling updates from
-                TeleGenic in seconds. Default is ``0.0``.
-            timeout (:obj:`float`, optional): Passed to :meth:`TeleGenic.Bot.get_updates`.
+                Telegram in seconds. Default is ``0.0``.
+            timeout (:obj:`float`, optional): Passed to :meth:`telegram.Bot.get_updates`.
             drop_pending_updates (:obj:`bool`, optional): Whether to clean any pending updates on
-                TeleGenic servers before actually starting to poll. Default is :obj:`False`.
+                Telegram servers before actually starting to poll. Default is :obj:`False`.
 
                 .. versionadded :: 13.4
             clean (:obj:`bool`, optional): Alias for ``drop_pending_updates``.
@@ -382,14 +362,14 @@ class Updater(Generic[CCT, UD, CD, BD]):
                 .. deprecated:: 13.4
                     Use ``drop_pending_updates`` instead.
             bootstrap_retries (:obj:`int`, optional): Whether the bootstrapping phase of the
-                :class:`TeleGenic.ext.Updater` will retry on failures on the TeleGenic server.
+                :class:`telegram.ext.Updater` will retry on failures on the Telegram server.
 
                 * < 0 - retry indefinitely (default)
                 *   0 - no retries
                 * > 0 - retry up to X times
 
             allowed_updates (List[:obj:`str`], optional): Passed to
-                :meth:`TeleGenic.Bot.get_updates`.
+                :meth:`telegram.Bot.get_updates`.
             read_latency (:obj:`float` | :obj:`int`, optional): Grace time in seconds for receiving
                 the reply from server. Will be added to the ``timeout`` value and used as the read
                 timeout from server (Default: ``2``).
@@ -461,10 +441,15 @@ class Updater(Generic[CCT, UD, CD, BD]):
         and :attr:`key` are not provided, the webhook will be started directly on
         http://listen:port/url_path, so SSL can be handled by another
         application. Else, the webhook will be started on
-        https://listen:port/url_path. Also calls :meth:`TeleGenic.Bot.set_webhook` as required.
+        https://listen:port/url_path. Also calls :meth:`telegram.Bot.set_webhook` as required.
+
+        Note:
+            ``telegram.Bot.set_webhook.secret_token`` is not checked by this webhook
+            implementation. If you want to use this new security parameter, either build your own
+            webhook server or update your code to version 20.0a2+.
 
         .. versionchanged:: 13.4
-            :meth:`start_webhook` now *always* calls :meth:`TeleGenic.Bot.set_webhook`, so pass
+            :meth:`start_webhook` now *always* calls :meth:`telegram.Bot.set_webhook`, so pass
             ``webhook_url`` instead of calling ``updater.bot.set_webhook(webhook_url)`` manually.
 
         Args:
@@ -474,7 +459,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
             cert (:obj:`str`, optional): Path to the SSL certificate file.
             key (:obj:`str`, optional): Path to the SSL key file.
             drop_pending_updates (:obj:`bool`, optional): Whether to clean any pending updates on
-                TeleGenic servers before actually starting to poll. Default is :obj:`False`.
+                Telegram servers before actually starting to poll. Default is :obj:`False`.
 
                 .. versionadded :: 13.4
             clean (:obj:`bool`, optional): Alias for ``drop_pending_updates``.
@@ -482,7 +467,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
                 .. deprecated:: 13.4
                     Use ``drop_pending_updates`` instead.
             bootstrap_retries (:obj:`int`, optional): Whether the bootstrapping phase of the
-                :class:`TeleGenic.ext.Updater` will retry on failures on the TeleGenic server.
+                :class:`telegram.ext.Updater` will retry on failures on the Telegram server.
 
                 * < 0 - retry indefinitely (default)
                 *   0 - no retries
@@ -491,11 +476,11 @@ class Updater(Generic[CCT, UD, CD, BD]):
             webhook_url (:obj:`str`, optional): Explicitly specify the webhook url. Useful behind
                 NAT, reverse proxy, etc. Default is derived from ``listen``, ``port`` &
                 ``url_path``.
-            ip_address (:obj:`str`, optional): Passed to :meth:`TeleGenic.Bot.set_webhook`.
+            ip_address (:obj:`str`, optional): Passed to :meth:`telegram.Bot.set_webhook`.
 
                 .. versionadded :: 13.4
             allowed_updates (List[:obj:`str`], optional): Passed to
-                :meth:`TeleGenic.Bot.set_webhook`.
+                :meth:`telegram.Bot.set_webhook`.
             force_event_loop (:obj:`bool`, optional): Legacy parameter formerly used for a
                 workaround on Windows + Python 3.8+. No longer has any effect.
 
@@ -504,7 +489,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
                    issue.
 
             max_connections (:obj:`int`, optional): Passed to
-                :meth:`TeleGenic.Bot.set_webhook`.
+                :meth:`telegram.Bot.set_webhook`.
 
                 .. versionadded:: 13.6
 
@@ -579,7 +564,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
         ready=None,
     ):  # pragma: no cover
         # Thread target of thread 'updater'. Runs in background, pulls
-        # updates from TeleGenic and inserts them in the update queue of the
+        # updates from Telegram and inserts them in the update queue of the
         # Dispatcher.
 
         self.logger.debug('Updater thread started (polling)')
@@ -632,7 +617,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
 
         Args:
             action_cb (:obj:`callable`): Network oriented callback function to call.
-            onerr_cb (:obj:`callable`): Callback to call when TeleGenicError is caught. Receives the
+            onerr_cb (:obj:`callable`): Callback to call when TelegramError is caught. Receives the
                 exception object as a parameter.
             description (:obj:`str`): Description text to use for logs and exception raised.
             interval (:obj:`float` | :obj:`int`): Interval to sleep between each call to
@@ -655,9 +640,9 @@ class Updater(Generic[CCT, UD, CD, BD]):
             except InvalidToken as pex:
                 self.logger.error('Invalid token; aborting')
                 raise pex
-            except TeleGenicError as TeleGenic_exc:
-                self.logger.error('Error while %s: %s', description, TeleGenic_exc)
-                onerr_cb(TeleGenic_exc)
+            except TeleGenicError as telegram_exc:
+                self.logger.error('Error while %s: %s', description, telegram_exc)
+                onerr_cb(telegram_exc)
                 cur_interval = self._increase_poll_interval(cur_interval)
             else:
                 cur_interval = interval
@@ -759,14 +744,14 @@ class Updater(Generic[CCT, UD, CD, BD]):
         def bootstrap_del_webhook():
             self.logger.debug('Deleting webhook')
             if drop_pending_updates:
-                self.logger.debug('Dropping pending updates from TeleGenic server')
+                self.logger.debug('Dropping pending updates from Telegram server')
             self.bot.delete_webhook(drop_pending_updates=drop_pending_updates)
             return False
 
         def bootstrap_set_webhook():
             self.logger.debug('Setting webhook')
             if drop_pending_updates:
-                self.logger.debug('Dropping pending updates from TeleGenic server')
+                self.logger.debug('Dropping pending updates from Telegram server')
             self.bot.set_webhook(
                 url=webhook_url,
                 certificate=cert,
@@ -832,7 +817,7 @@ class Updater(Generic[CCT, UD, CD, BD]):
         if self.httpd:
             self.logger.debug(
                 'Waiting for current webhook connection to be '
-                'closed... Send a TeleGenic message to the bot to exit '
+                'closed... Send a Telegram message to the bot to exit '
                 'immediately.'
             )
             self.httpd.shutdown()

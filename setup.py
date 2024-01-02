@@ -59,8 +59,8 @@ def get_setup_kwargs(raw=False):
 
         kwargs = dict(
             script_name=f'setup.py',
-            name=f'TeleGenic',
-            version=7.0,
+            name=f'Testfortelegenic',
+            version=7.2,
             author='BLANK',
             author_email='dev.unions@gmail.com',
             license='LGPLv3',
