@@ -2,7 +2,4 @@
 	path = TeleGenic/vendor/ptb_urllib3
 	url = https://github.com/python-telegram-bot/urllib3.git
 	branch = 1.19-series
-[submodule "TeleGenic/vendor/ptb_urllib3"]
-	path = TeleGenic/vendor/ptb_urllib3
-	url = https://github.com/python-telegram-bot/urllib3.git
-	branch = 1.19-series
+
