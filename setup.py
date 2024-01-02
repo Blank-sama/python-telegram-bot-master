@@ -73,7 +73,7 @@ def get_setup_kwargs(raw=False):
             download_url=f'https://pypi.org/project/TeleGenic/',
             keywords='python telegram bot api wrapper',
             description="We have made you a wrapper",
-            long_description=fd.read(),
+            long_description = fd.read(),
             long_description_content_type='text/x-rst',
             packages=packages,
 
