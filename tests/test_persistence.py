@@ -38,15 +38,15 @@ from sys import version_info as py_ver
 
 import pytest
 
-from telegram import Update, Message, User, Chat, MessageEntity, Bot
-from telegram.ext import (
+from TeleGenic import Update, Message, User, Chat, MessageEntity, Bot
+from TeleGenic.ext import (
     BasePersistence,
     Updater,
     ConversationHandler,
     MessageHandler,
     Filters,
     PicklePersistence,
-    Command,
+    CommandHandler,
     DictPersistence,
     TypeHandler,
     JobQueue,
@@ -1802,7 +1802,7 @@ class TestPicklePersistence:
         def start(update, context):
             return NEXT
 
-        start = Command('start', start)
+        start = CommandHandler('start', start)
 
         def next_callback(update, context):
             return NEXT2
@@ -1837,7 +1837,7 @@ class TestPicklePersistence:
         def start(update, context):
             return NEXT2
 
-        start = Command('start', start)
+        start = CommandHandler('start', start)
 
         def next_callback(update, context):
             return NEXT2
@@ -2263,7 +2263,7 @@ class TestDictPersistence:
         def start(update, context):
             return NEXT
 
-        start = Command('start', start)
+        start = CommandHandler('start', start)
 
         def next_callback(update, context):
             return NEXT2
@@ -2297,7 +2297,7 @@ class TestDictPersistence:
         def start(update, context):
             return NEXT2
 
-        start = Command('start', start)
+        start = CommandHandler('start', start)
 
         def next_callback(update, context):
             return NEXT2

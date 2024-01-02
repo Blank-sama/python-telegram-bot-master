@@ -24,7 +24,7 @@ import itertools
 from TeleGenic.utils.deprecate import TeleGenicDeprecationWarning
 
 from TeleGenic import Message, Update, Chat, Bot
-from TeleGenic.ext import Command, Filters, CallbackContext, JobQueue, PrefixHandler
+from TeleGenic.ext import CommandHandler, Filters, CallbackContext, JobQueue, PrefixHandler
 from tests.conftest import (
     make_command_message,
     make_command_update,
@@ -139,7 +139,7 @@ class BaseTest:
 # ----------------------------- Command -----------------------------
 
 
-class TestCommand(BaseTest):
+class TestCommandHandler(BaseTest):
     CMD = '/test'
 
     def test_slot_behaviour(self, recwarn, mro_slots):
@@ -173,7 +173,7 @@ class TestCommand(BaseTest):
 
     def make_default_handler(self, callback=None, **kwargs):
         callback = callback or self.callback_basic
-        return Command(self.CMD[1:], callback, **kwargs)
+        return CommandHandler(self.CMD[1:], callback, **kwargs)
 
     def test_basic(self, dp, command):
         """Test whether a command handler responds to its command
@@ -193,11 +193,11 @@ class TestCommand(BaseTest):
     )
     def test_invalid_commands(self, cmd):
         with pytest.raises(ValueError, match='not a valid bot command'):
-            Command(cmd, self.callback_basic)
+            CommandHandler(cmd, self.callback_basic)
 
     def test_command_list(self):
         """A command handler with multiple commands registered should respond to all of them."""
-        handler = Command(['test', 'star'], self.callback_basic)
+        handler = CommandHandler(['test', 'star'], self.callback_basic)
         assert is_match(handler, make_command_update('/test'))
         assert is_match(handler, make_command_update('/star'))
         assert not is_match(handler, make_command_update('/stop'))
@@ -251,7 +251,7 @@ class TestCommand(BaseTest):
 
     @pytest.mark.parametrize('pass_keyword', BaseTest.PASS_KEYWORDS)
     def test_pass_data(self, dp, command_update, pass_combination, pass_keyword):
-        handler = Command('test', self.make_callback_for(pass_keyword), **pass_combination)
+        handler = CommandHandler('test', self.make_callback_for(pass_keyword), **pass_combination)
         dp.add_handler(handler)
         assert self.response(dp, command_update) == pass_combination.get(pass_keyword, False)
 
