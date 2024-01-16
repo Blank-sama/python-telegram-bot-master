@@ -46,7 +46,7 @@ from TeleGenic.ext import (
     MessageHandler,
     Filters,
     PicklePersistence,
-    CommandHandler,
+    Command,
     DictPersistence,
     TypeHandler,
     JobQueue,
@@ -1802,7 +1802,7 @@ class TestPicklePersistence:
         def start(update, context):
             return NEXT
 
-        start = CommandHandler('start', start)
+        start = Command('start', start)
 
         def next_callback(update, context):
             return NEXT2
@@ -1837,7 +1837,7 @@ class TestPicklePersistence:
         def start(update, context):
             return NEXT2
 
-        start = CommandHandler('start', start)
+        start = Command('start', start)
 
         def next_callback(update, context):
             return NEXT2
@@ -2263,7 +2263,7 @@ class TestDictPersistence:
         def start(update, context):
             return NEXT
 
-        start = CommandHandler('start', start)
+        start = Command('start', start)
 
         def next_callback(update, context):
             return NEXT2
@@ -2297,7 +2297,7 @@ class TestDictPersistence:
         def start(update, context):
             return NEXT2
 
-        start = CommandHandler('start', start)
+        start = Command('start', start)
 
         def next_callback(update, context):
             return NEXT2

@@ -28,7 +28,7 @@ from TeleGenic.ext import (
     MessageHandler,
     Filters,
     Defaults,
-    CommandHandler,
+    Command,
     CallbackContext,
     JobQueue,
     BasePersistence,
@@ -499,9 +499,9 @@ class TestDispatcher:
 
         # If Stop raised handlers in other groups should not be called.
         passed = []
-        dp.add_handler(CommandHandler('start', start1), 1)
-        dp.add_handler(CommandHandler('start', start3), 1)
-        dp.add_handler(CommandHandler('start', start2), 2)
+        dp.add_handler(Command('start', start1), 1)
+        dp.add_handler(Command('start', start3), 1)
+        dp.add_handler(Command('start', start2), 2)
         dp.process_update(update)
         assert passed == ['start1']
 
@@ -541,9 +541,9 @@ class TestDispatcher:
         # If an unhandled exception was caught, no further handlers from the same group should be
         # called. Also, the error handler should be called and receive the exception
         passed = []
-        dp.add_handler(CommandHandler('start', start1), 1)
-        dp.add_handler(CommandHandler('start', start2), 1)
-        dp.add_handler(CommandHandler('start', start3), 2)
+        dp.add_handler(Command('start', start1), 1)
+        dp.add_handler(Command('start', start2), 1)
+        dp.add_handler(Command('start', start3), 2)
         dp.add_error_handler(error)
         dp.process_update(update)
         assert passed == ['start1', 'error', err, 'start3']
@@ -583,9 +583,9 @@ class TestDispatcher:
 
         # If a TelegramException was caught, an error handler should be called and no further
         # handlers from the same group should be called.
-        dp.add_handler(CommandHandler('start', start1), 1)
-        dp.add_handler(CommandHandler('start', start2), 1)
-        dp.add_handler(CommandHandler('start', start3), 2)
+        dp.add_handler(Command('start', start1), 1)
+        dp.add_handler(Command('start', start2), 1)
+        dp.add_handler(Command('start', start3), 2)
         dp.add_error_handler(error)
         dp.process_update(update)
         assert passed == ['start1', 'error', err, 'start3']
@@ -657,7 +657,7 @@ class TestDispatcher:
         )
         my_persistence = OwnPersistence()
         dp = Dispatcher(bot, None, persistence=my_persistence, use_context=False)
-        dp.add_handler(CommandHandler('start', start1))
+        dp.add_handler(Command('start', start1))
         dp.add_error_handler(error)
         dp.process_update(update)
         assert increment == ["error", "error", "error", "error"]
@@ -698,9 +698,9 @@ class TestDispatcher:
 
         # If a TelegramException was caught, an error handler should be called and no further
         # handlers from the same group should be called.
-        dp.add_handler(CommandHandler('start', start1), 1)
-        dp.add_handler(CommandHandler('start', start2), 1)
-        dp.add_handler(CommandHandler('start', start3), 2)
+        dp.add_handler(Command('start', start1), 1)
+        dp.add_handler(Command('start', start2), 1)
+        dp.add_handler(Command('start', start3), 2)
         dp.add_error_handler(error)
         dp.process_update(update)
         assert passed == ['start1', 'error', err]

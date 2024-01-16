@@ -36,7 +36,7 @@ if TYPE_CHECKING:
 RT = TypeVar('RT')
 
 
-class CommandHandler(Handler[Update, CCT]):
+class Command(Handler[Update, CCT]):
     """Handler class to handle Telegram commands.
 
     Commands are Telegram messages that start with ``/``, optionally followed by an ``@`` and the
@@ -249,7 +249,7 @@ class CommandHandler(Handler[Update, CCT]):
                 context.update(check_result[1])
 
 
-class PrefixHandler(CommandHandler):
+class PrefixHandler(Command):
     """Handler class to handle custom prefix commands.
 
     This is a intermediate handler between :class:`MessageHandler` and :class:`CommandHandler`.
